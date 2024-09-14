@@ -1,0 +1,730 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>en Hotel staff_m5_6</title>
+</head>
+<style>
+    @charset "utf-8";
+    /*全局初始化*/
+    
+    body,
+    div,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    img,
+    ol,
+    ul,
+    li,
+    dd,
+    dt,
+    dl,
+    input,
+    strong,
+    span,
+    button,
+    em {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    body {
+        font-size: 20px;
+        font-family: "微软雅黑";
+        color: #999;
+        overflow-x: hidden;
+    }
+    
+    ul,
+    ol {
+        list-style: none;
+    }
+    
+    img {
+        display: block;
+        position: absolute;
+    }
+    /*ie会有一个bug 的小缝隙*/
+    
+    a {
+        color: #fff;
+        text-decoration: none;
+        outline: none;
+        display: inline-block;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    button {
+        border: none;
+    }
+    /*媒体显示类*/
+    
+    #animate .full {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #animate .center {
+        width: 800px;
+        height: 404px;
+        left: 50%;
+        top: 50%;
+        margin-left: -400px;
+        margin-top: -236px;
+        border-radius: 5px;
+    }
+    
+    .btn {
+        cursor: pointer;
+    }
+    
+    .btn1 {
+        cursor: move;
+    }
+    
+    .num {
+        display: none;
+    }
+    
+    span {
+        position: absolute;
+        font-size: 24px;
+        color: #666666;
+    }
+    
+    .finger {
+        animation: myfirst infinite 0.5s;
+        -moz-animation: myfirst infinite 0.5s;
+        /* Firefox */
+        -webkit-animation: myfirst infinite 0.5s;
+        /* Safari and Chrome */
+        -o-animation: myfirst infinite 0.5s;
+        /* Opera */
+    }
+    
+    @keyframes myfirst {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-webkit-keyframes myfirst
+    /* Safari and Chrome */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-moz-keyframes myfirst
+    /* Firefox */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-o-keyframes myfirst
+    /* Opera */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    .finger0 {
+        animation: myfirst1 infinite 0.5s;
+        -moz-animation: myfirst1 infinite 0.5s;
+        /* Firefox */
+        -webkit-animation: myfirst1 infinite 0.5s;
+        /* Safari and Chrome */
+        -o-animation: myfirst1 infinite 0.5s;
+        /* Opera */
+    }
+    
+    @keyframes myfirst1 {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-webkit-keyframes myfirst1
+    /* Safari and Chrome */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-moz-keyframes myfirst1
+    /* Firefox */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-o-keyframes myfirst1
+    /* Opera */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+</style>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script src="../../js/pageResponse.js"></script>
+<script src="../../js/videof.js"></script>
+<script src="../../js/index.js"></script>
+<script src="../../js/IsPC.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.onload = window.onresize = function() {
+            pageResponse({
+                selectors: '#content', //模块选择器，使用querySelectorAll的方法
+                mode: 'contain', // auto || contain || cover ，默认模式为auto 
+                width: '1680', //输入页面的宽度，只支持输入数值，默认宽度为320px
+                height: '1050' //输入页面的高度，只支持输入数值，默认高度为504px
+            })
+        }
+        // createCont(1,995 ,445 ,82 ,191 ,4,91,[365,518,639,757],4,false);
+        createTFcont(1,585 ,363,82,192,2,646,[577,674],2,false);
+        createTFcont(2,585 ,363,82,192,2,646,[577,674],2,false);
+        createTFcont(3,585 ,363,82,192,2,646,[577,674],1,false);
+        createTFcont(4,585 ,363,82,192,2,646,[597,695],2,true);
+
+        totalLoPage(5);
+        nowLoPage(1);
+        myVideo1();
+    });
+    
+</script>
+
+<body ondragstart="return false;" scroll="no">
+    <img src="../../img/white.png" style="position: absolute;"/>
+    <div id="content" style="position: absolute;">
+
+        <!-- <img src="../../img/videobigvpbtn.png" id="videoPause1" onclick="indexShow()" style="cursor: pointer;position: absolute; left: 720px;top: 420px;width: 257px; height: 257px;z-index: 1;">-->
+        <img src="../img/m5bg6.png" style="display: none;"  alt="" id="m5bg6"/>
+
+        <div id="cont0" style="display: none;">
+            <img src="../../img/background.png" id="background" alt=""/>
+            <img src="../../img/bgd.png" id="bgd" alt=""/>
+            <img src="../../img/titleR.png"  alt="" style="left: 1306.75px;top: 0.15px;" id="titleR"/>
+            <img src="../../img/titleL.png"  alt="" style="left: 133.10px;top: 105px;" id="titleL"/>
+            <img src="../../img/m5TitleL.png"  alt="" style="left: 0px;top: 13.65px;" id="titleL1"/>
+        </div>
+        
+        <!-- <div id="cont1" style="position: absolute;display: none">
+            <img src="img/question1.png"  alt="" style="left: 82px;top: 192px;">
+            <div id="question1">
+                <img src="./img/cheek1.png" style="left:585px;top:363px" alt="">
+
+                <img src="./img/right1_1.png" id="q1choose1" alt="" style="left: 646px;top: 577px;">
+                <img src="./img/wrong1_1.png" id="q1choose2" alt="" style="left: 646px;top: 674px;">
+
+                <img src="../../img/submit.png" id="submit1" alt="" style="left:1451px;top:850px;cursor: pointer;">
+
+                <img src="../../img/continue.png" id="continue1" alt="" style="left: 1428px;top: 850px;cursor: pointer;">
+                <img src="./img/right1.png" id="right1" alt="" style="left: -6px;top: 334px;display:none;cursor: pointer;">
+                <img src="./img/wrong1.png" id="wrong1" alt="" style="left:-6px;top: 334px;display:none;cursor: pointer;">
+            </div>
+        </div> -->
+
+        <!-- <div id="cont1" style="position: absolute;display: none;">
+            <img src="img/cheek1.png" alt="" style="left: 1023.60px;top: 323.70px;display: none;" id="cheek1"/>
+            <img src="img/question1.png" alt="" style="left: 82px;top: 191.45px;" id="question1"/>
+            <img src="img/select1_1.png" alt="" style="left: 91.20px;top: 382.80px;cursor: pointer;" id="select1" onclick="selectBtn1()"/>
+            <img src="img/select2_1.png" alt="" style="left: 91.20px;top: 510.05px;cursor: pointer;" id="select2" onclick="selectBtn2()"/>
+            <img src="img/select3_1.png" alt="" style="left: 91.20px;top: 639.65px;cursor: pointer;" id="select3" onclick="selectBtn3()"/>
+            <img src="img/select4_1.png" alt="" style="left: 91.20px;top: 763.50px;cursor: pointer;" id="select4" onclick="selectBtn4()"/>
+            <img src="../../img/submit.png" id="submit1" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;" onclick="submitBtn1()"/>
+            <img src="img/right1.png" alt="" style="left: -6px;top: 300.05px;display: none;" id="right1"/>
+            <img src="../../img/tryAgainBg.png" alt="" style="left: -6px;top: 398.10px;display: none;" id="tryAgainBg1"/>
+            <img src="../../img/continue.png" id="continue1" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;display: none;" onclick="continueBtn1()"/>
+            <img src="../../img/tryAgain.png" alt="" style="left: 1348.35px;top:849.40px;cursor: pointer;display: none;" id="againBtn1" onclick="againBtn1()"/>
+        </div>
+        <div id="cont2" style="position: absolute;display: none;">
+            <img src="img/cheek2.png" alt="" style="left: 747.50px;top: 461.95px;display: none;" id="cheek2"/>
+            <img src="img/question2.png" alt="" style="left: 82px;top: 191.45px;" id="question2"/>
+            <img src="img/right1_1.png" alt="" style="left: 91.85px;top: 515.80px;cursor: pointer;" id="opt1" onclick="optBtn1()"/>
+            <img src="img/wrong1_1.png" alt="" style="left: 91.85px;top: 634.10px;cursor: pointer;" id="opt2" onclick="optBtn2()"/>
+            <img src="../../img/submit.png" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;" id="submit2" onclick="submitBtn2()"/>
+            <img src="img/right2.png" alt="" style="left: -6px;top: 305.95px;display: none;" id="right2"/>
+            <img src="img/wrong2.png" alt="" style="left: -6px;top: 305.95px;display: none;" id="wrong2"/>
+            <img src="../../img/continue.png" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;display: none;" id="continue2" onclick="continueBtn2()"/>
+            <img src="../../img/tryAgain.png" alt="" style="left: 1348.35px;top:849.40px;cursor: pointer;display: none;" id="againBtn2" onclick="againBtn2()"/>
+        </div>
+        <div id="cont3" style="position: absolute;display: none;">
+            <img src="img/cheek3.png" alt="" style="left: 700.75px;top: 311.70px;display: none;" id="cheek3"/>
+            <img src="img/question3.png" alt="" style="left: 82px;top: 191.45px;" id="question3"/>
+            <img src="img/choose1_1.png" alt="" style="left: 91.20px;top: 382.80px;cursor: pointer;" id="choose1" onclick="chooseBtn1()"/>
+            <img src="img/choose2_1.png" alt="" style="left: 91.20px;top: 510.05px;cursor: pointer;" id="choose2" onclick="chooseBtn2()"/>
+            <img src="img/choose3_1.png" alt="" style="left: 91.20px;top: 639.65px;cursor: pointer;" id="choose3" onclick="chooseBtn3()"/>
+            <img src="img/choose4_1.png" alt="" style="left: 91.20px;top: 771px;cursor: pointer;" id="choose4" onclick="chooseBtn4()"/>
+            <img src="../../img/submit.png" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;" id="submit3" onclick="submitBtn3()"/>
+            <img src="img/right3.png" alt="" style="left: -6px;top: 311.45px;display: none;" id="right3"/>
+            <img src="../../img/tryAgainBg.png" alt="" style="left: -6px;top: 398.10px;display: none;" id="tryAgainBg3"/>
+            <img src="../../img/continue.png" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;display: none;" id="continue3" onclick="continueBtn3()"/>
+            <img src="../../img/tryAgain.png" alt="" style="left: 1348.35px;top:849.40px;cursor: pointer;display: none;" id="againBtn3" onclick="againBtn3()"/>
+        </div> -->
+
+
+        <img src="img/complete.png" alt="" style="display: none;" id="complete"/>
+        <img src="img/InComplete.png" alt="" style="display: none;" id="InComplete"/>
+        <audio id="myAudio" onclick="myAudioBtn()" style="position: absolute;left: 300px;"></audio>
+    </div>
+</body>
+<script>
+    var start = IsPC() ? "mousedown" : "touchstart";
+    var move = IsPC() ? "mousemove" : "touchmove";
+    var end = IsPC() ? "mouseup" : "touchend";
+    var flag = false;
+    var j = 0;
+    function indexShow(){
+        myVideo1();
+        setTimeout(function(){
+            $('#m5bg6').hide();
+        },200);
+        $('#videoPause1').hide();
+    }
+    var videoTestModel = true;
+    function myVideo1(){	
+        testVideo('content', 'videoMP4', 'video/m5_6_1.mp4', videoTestModel);
+        var myVideo = document.querySelector('#videoMP4');
+        myVideo.controls = false;
+        $('#viodeContent').show();//页面
+        $('#videoMP4').show();//声音
+        myVideo.play();
+        videoMP4.addEventListener("timeupdate",videoStart,false);
+        function videoStart(){
+            //timeDisplay = Math.floor(videoMP4.currentTime);
+            timeDisplay = videoMP4.currentTime;
+            timeTotal = videoMP4.duration;
+            var percent  = timeDisplay/timeTotal;
+            //nowLoPage((1+timeDisplay));
+            if(timeDisplay > 0.5 && timeDisplay < 1){
+                readSomeThing('audio/Assessment.mp3');
+            }
+        }
+        myAudio.onended = function () {
+            readSomeThing('');
+            videoMP4.removeEventListener("timeupdate",videoStart,false);
+            nowLoPage(1);
+            setTimeout(function(){
+                $('#viodeContent').hide(); 
+                $('#viodeContent').remove();         
+                $('#videoMP4').remove(); 
+                $('#m5bg6').hide();
+            },200);
+            setTimeout(function(){
+                readSomeThing('audio/topic1.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('');
+                }
+            },1000);
+            $('#bgd').hide();
+            $('#cont0').show();
+            $('#cont1').fadeIn(1500);
+            setTimeout(function(){
+                $('#cheek1').fadeIn(3000);
+            },600);
+        }
+        myVideo.onended = function(){
+            myVideo.src = '';
+            $('#m5bg6').show();
+        }
+    }
+   
+    function selectBtn1(){
+        flag = true;
+        j = 0;
+        $('#select1').attr('src','img/select1_2.png');
+        $('#select2').attr('src','img/select2_1.png');
+        $('#select3').attr('src','img/select3_1.png');
+        $('#select4').attr('src','img/select4_1.png');
+    }
+    function selectBtn2(){
+        flag = true;
+        j = 0;
+        $('#select1').attr('src','img/select1_1.png');
+        $('#select2').attr('src','img/select2_2.png');
+        $('#select3').attr('src','img/select3_1.png');
+        $('#select4').attr('src','img/select4_1.png');
+    }
+    function selectBtn3(){
+        flag = true;
+        j = 0;
+        $('#select1').attr('src','img/select1_1.png');
+        $('#select2').attr('src','img/select2_1.png');
+        $('#select3').attr('src','img/select3_2.png');
+        $('#select4').attr('src','img/select4_1.png');
+    }
+    function selectBtn4(){
+        flag = true;
+        j = 1;
+        $('#select1').attr('src','img/select1_1.png');
+        $('#select2').attr('src','img/select2_1.png');
+        $('#select3').attr('src','img/select3_1.png');
+        $('#select4').attr('src','img/select4_2.png');
+    }
+
+    function submitBtn1(){
+        if(flag){
+            document.querySelector('#select1').style.pointerEvents = 'none';
+            document.querySelector('#select2').style.pointerEvents = 'none';
+            document.querySelector('#select3').style.pointerEvents = 'none'; 
+            document.querySelector('#select4').style.pointerEvents = 'none';
+            if(j == 1){
+                $('#right1').show();
+                $('#continue1').show();
+                $('#submit1').hide();
+                readSomeThing('../../audio/Correct.mp3');
+                j = 0;
+            }else{
+                $('#tryAgainBg1').show();
+                $('#againBtn1').show();
+                $('#submit1').hide();
+                readSomeThing('../../audio/again.mp3');
+            }
+        }
+        flag = false;
+        console.log(flag + j)
+    }
+    function againBtn1(){
+        $('#tryAgainBg1').hide();
+        $('#againBtn1').hide();
+        $('#submit1').show();
+        readSomeThing('');
+        $('#select1').attr('src','img/select1_1.png');
+        $('#select2').attr('src','img/select2_1.png');
+        $('#select3').attr('src','img/select3_1.png');
+        $('#select4').attr('src','img/select4_1.png');
+        document.querySelector('#select1').style.pointerEvents = 'auto';
+        document.querySelector('#select2').style.pointerEvents = 'auto';
+        document.querySelector('#select3').style.pointerEvents = 'auto'; 
+        document.querySelector('#select4').style.pointerEvents = 'auto';
+    }
+    function continueBtn1(){
+        nowLoPage(2);
+        $("#cont1").remove();
+        readSomeThing('');
+        setTimeout(function(){
+            readSomeThing('audio/topic2.mp3');
+        },1000);
+        $("#cont2").fadeIn(1500);
+        setTimeout(function(){
+            $('#cheek2').fadeIn(3000);
+        },600);
+    }
+    
+    function optBtn1(){
+        flag = true;
+        j = 1;
+        $('#opt1').attr('src','img/right1_2.png');
+        $('#opt2').attr('src','img/wrong1_1.png');
+    }
+    function optBtn2(){
+        flag = true;
+        j = 0;
+        $('#opt1').attr('src','img/right1_1.png');
+        $('#opt2').attr('src','img/wrong1_2.png');
+    }
+    
+    function submitBtn2(){
+        if(flag){
+            if(j == 1){
+                $('#right2').show();
+                $('#continue2').show();
+                $('#submit2').hide();
+                readSomeThing('../../audio/Correct.mp3');
+                j = 0;
+            }else{
+                $('#wrong2').show();
+                $('#continue2').show();
+                $('#submit2').hide();
+                readSomeThing('../../audio/InCorrect.mp3');
+            }
+        }
+        flag = false;
+        console.log(flag)
+        console.log(j)
+    }
+    function againBtn2(){
+        $('#tryAgainBg2').hide();
+        $('#againBtn2').hide();
+        $('#submit2').show();
+        readSomeThing('');
+        $('#opt1').attr('src','img/opt1_1.png');
+        $('#opt2').attr('src','img/opt2_1.png');
+        $('#opt3').attr('src','img/opt3_1.png');
+    }
+    function continueBtn2(){
+        $("#cont2").remove();
+        readSomeThing('');
+        setTimeout(function(){
+            readSomeThing('audio/topic3.mp3');
+        },1000);
+        $("#cont3").fadeIn(1500);
+        setTimeout(function(){
+            $('#cheek3').fadeIn(3000);
+        },600);
+        nowLoPage(3);
+    }
+    function chooseBtn1(){
+        flag = true;
+        j = 0;
+        $('#choose1').attr('src','img/choose1_2.png');
+        $('#choose2').attr('src','img/choose2_1.png');
+        $('#choose3').attr('src','img/choose3_1.png');
+        $('#choose4').attr('src','img/choose4_1.png');
+    }
+    function chooseBtn2(){
+        flag = true;
+        j = 0;
+        $('#choose1').attr('src','img/choose1_1.png');
+        $('#choose2').attr('src','img/choose2_2.png');
+        $('#choose3').attr('src','img/choose3_1.png');
+        $('#choose4').attr('src','img/choose4_1.png');
+    }
+    function chooseBtn3(){
+        flag = true;
+        j = 0;
+        $('#choose1').attr('src','img/choose1_1.png');
+        $('#choose2').attr('src','img/choose2_1.png');
+        $('#choose3').attr('src','img/choose3_2.png');
+        $('#choose4').attr('src','img/choose4_1.png');
+    }
+    function chooseBtn4(){
+        flag = true;
+        j = 1;
+        $('#choose1').attr('src','img/choose1_1.png');
+        $('#choose2').attr('src','img/choose2_1.png');
+        $('#choose3').attr('src','img/choose3_1.png');
+        $('#choose4').attr('src','img/choose4_2.png');
+    }
+
+    function submitBtn3(){
+        if(flag){
+            document.querySelector('#choose1').style.pointerEvents = 'none'; 
+            document.querySelector('#choose2').style.pointerEvents = 'none'; 
+            document.querySelector('#choose3').style.pointerEvents = 'none'; 
+            document.querySelector('#choose4').style.pointerEvents = 'none';
+            if(j == 1){
+                $('#right3').show();
+                $('#continue3').show();
+                $('#submit3').hide();
+                readSomeThing('../../audio/Correct.mp3');
+                j = 0;
+            }else{
+                $('#tryAgainBg3').show();
+                $('#againBtn3').show();
+                $('#submit3').hide();
+                readSomeThing('../../audio/again.mp3');
+            }
+        }
+        flag = false;
+        console.log(flag)
+        console.log(j)
+    }
+    function againBtn3(){
+        $('#tryAgainBg3').hide();
+        $('#againBtn3').hide();
+        $('#submit3').show();
+        readSomeThing('');
+        $('#choose1').attr('src','img/choose1_1.png');
+        $('#choose2').attr('src','img/choose2_1.png');
+        $('#choose3').attr('src','img/choose3_1.png');
+        $('#choose4').attr('src','img/choose4_1.png');
+        document.querySelector('#choose1').style.pointerEvents = 'auto'; 
+        document.querySelector('#choose2').style.pointerEvents = 'auto'; 
+        document.querySelector('#choose3').style.pointerEvents = 'auto'; 
+        document.querySelector('#choose4').style.pointerEvents = 'auto';
+    }
+    function continueBtn3(){
+        setTimeout(function(){
+            $("#cont0").remove();
+            $("#cont3").remove();
+        },200);
+        nowLoPage(4);
+        readSomeThing('');
+        if("当所有章节完成时"){
+            $('#complete').show();
+            readSomeThing('../../audio/complete.mp3');
+            myAudio.onended = function(){
+                readSomeThing('');
+                setMyCompleted(false);   
+            }
+        }else if("存在章节未完成"){
+            $('#InComplete').show();
+            readSomeThing('xxx');//未找到失败的VO
+            myAudio.onended = function(){
+                readSomeThing('');
+                setMyCompleted(false);   
+            }
+        }
+    }
+    
+    function readSomeThing(url) {
+        //myAudio.controls = true;
+		document.body.appendChild(myAudio);
+        myAudio.pause();
+        myAudio.src = url;
+        myAudio.load();
+        myAudio.play();
+    }
+    function videoPauseBtn(){
+        $('#videoPause').show();
+        videoMP4.pause();
+    }
+    function myvideoPlay(){
+        var videoMP4 = document.querySelector('#videoMP4');
+        videoMP4.play();
+        $('#videoPause').hide();
+    }
+    function videoBtn(){
+        if(videoMP4.paused){
+            videoMP4.play();
+        }else{
+            videoMP4.pause();
+        }
+    }
+    function videoPlay(){
+        var videoMP4 = document.querySelector('#videoMP4');
+        var myAudio = document.querySelector('#myAudio');
+        if(videoMP4){
+            videoMP4.play();
+        }
+        if(myAudio){
+            myAudio.play();
+        }
+    }
+    function videoPause(){
+        var videoMP4 = document.querySelector('#videoMP4');
+        var myAudio = document.querySelector('#myAudio');
+        if(videoMP4){
+            videoMP4.pause();
+        }
+        if(myAudio){
+            myAudio.pause();
+        }
+    }
+    var sub0Status
+    window.addEventListener("message", messageHandler, true);
+    function messageHandler(e) {
+        var dataStr = e.data;
+            var list = dataStr.split("#");
+
+            if (list[0] == "getAllSubStatus") {
+                sub0Status  =list[1].split("");
+                console.log("111111111111111111==="+sub0Status);
+            } else if (list[0] == "lovideoMP4play") {
+                console.log("lovideoMP4play");
+                videoBtn();
+            }else if (list[0] == "videoPlay") {
+                videoPlay();
+            }else if (list[0] == "videoPause") {
+                videoPause();
+            }
+    }
+    function getAllSubStatus(num) {
+        console.log('getAllSubStatus');
+        window.parent.postMessage("getAllSubStatus#" + num, "*");
+    }
+    function getObj(obj) {
+        return document.getElementById(obj);
+    }
+    var s = 0;
+
+    function setMyCompleted(obj) {
+        window.parent.postMessage("setCompleted#" + obj, "*");
+    }
+
+    function totalLoPage(num) {
+        window.parent.postMessage("totalPage#" + num, "*");
+    }
+
+    function nowLoPage(num) {
+        window.parent.postMessage("nowPage#" + num, "*");
+    }
+    function setMyVideoState(str){
+        //window.parent.postMessage("setVideoState#"+str,"*");
+    }
+    function fingerShow(num){
+        window.parent.postMessage("fingerShow#"+num,"*");
+    }
+    function unNav(str){
+        window.parent.postMessage("unNav#"+str,"*");
+    }
+    function tabToggle(str){
+        window.parent.postMessage("tabToggle#"+str,"*");
+    }
+    function updateMyPercent(str){
+        //window.parent.postMessage("updatePercent#"+str,"*");
+    }
+</script>
+</html>

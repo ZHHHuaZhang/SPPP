@@ -1,0 +1,848 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>en Hotel Staff_m4_4</title>
+</head>
+<style>
+    @charset "utf-8";
+    /*全局初始化*/
+    
+    body,
+    div,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    img,
+    ol,
+    ul,
+    li,
+    dd,
+    dt,
+    dl,
+    input,
+    strong,
+    span,
+    button,
+    em {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    body {
+        font-size: 20px;
+        font-family: "微软雅黑";
+        color: #999;
+        overflow-x: hidden;
+    }
+    
+    ul,
+    ol {
+        list-style: none;
+    }
+    
+    img {
+        display: block;
+        position: absolute;
+    }
+    /*ie会有一个bug 的小缝隙*/
+    
+    a {
+        color: #fff;
+        text-decoration: none;
+        outline: none;
+        display: inline-block;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    button {
+        border: none;
+    }
+    /*媒体显示类*/
+    
+    #animate .full {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #animate .center {
+        width: 800px;
+        height: 404px;
+        left: 50%;
+        top: 50%;
+        margin-left: -400px;
+        margin-top: -236px;
+        border-radius: 5px;
+    }
+    
+    .btn {
+        cursor: pointer;
+    }
+    
+    .btn1 {
+        cursor: move;
+    }
+    
+    .num {
+        display: none;
+    }
+    
+    span {
+        position: absolute;
+        font-size: 24px;
+        color: #666666;
+    }
+    
+    .finger {
+        animation: myfirst infinite 0.5s;
+        -moz-animation: myfirst infinite 0.5s;
+        /* Firefox */
+        -webkit-animation: myfirst infinite 0.5s;
+        /* Safari and Chrome */
+        -o-animation: myfirst infinite 0.5s;
+        /* Opera */
+    }
+    
+    @keyframes myfirst {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-webkit-keyframes myfirst
+    /* Safari and Chrome */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-moz-keyframes myfirst
+    /* Firefox */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-o-keyframes myfirst
+    /* Opera */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    .finger0 {
+        animation: myfirst1 infinite 0.5s;
+        -moz-animation: myfirst1 infinite 0.5s;
+        /* Firefox */
+        -webkit-animation: myfirst1 infinite 0.5s;
+        /* Safari and Chrome */
+        -o-animation: myfirst1 infinite 0.5s;
+        /* Opera */
+    }
+    
+    @keyframes myfirst1 {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-webkit-keyframes myfirst1
+    /* Safari and Chrome */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-moz-keyframes myfirst1
+    /* Firefox */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-o-keyframes myfirst1
+    /* Opera */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+</style>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script src="../../js/pageResponse.js"></script>
+<script src="../../js/videof.js"></script>
+<script src="../../js/index.js"></script>
+<script src="../../js/IsPC.js"></script>
+<script src="js/drag.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.onload = window.onresize = function() {
+            pageResponse({
+                selectors: '#content', //模块选择器，使用querySelectorAll的方法
+                mode: 'contain', // auto || contain || cover ，默认模式为auto 
+                width: '1680', //输入页面的宽度，只支持输入数值，默认宽度为320px
+                height: '1050' //输入页面的高度，只支持输入数值，默认高度为504px
+            })
+        }
+        totalLoPage(4);
+        nowLoPage(1);
+        myVideo1();
+    });
+    
+</script>
+
+<body ondragstart="return false;" scroll="no">
+    <img src="../../img/white.png" style="position: absolute;"/>
+    <div id="content" style="position: absolute;">
+
+        <!-- <img src="../../img/videobigvpbtn.png" id="videoPause1" onclick="indexShow()" style="cursor: pointer;position: absolute; left: 720px;top: 420px;width: 257px; height: 257px;z-index: 1;">
+        <img src="../img/m4bg4.png"  alt="" id="m4bg4"/> -->
+        <div id="main" style="position: absolute;display: none;">
+            <img src="img/m4bg1.png" id="m4bg1" alt=""/>
+            <img src="img/opt1_1.png"  alt="" style="left: 903.85px;top: 359px;cursor: pointer;" id="opt1" onclick="optBtn1()"/>
+            <img src="img/opt1_1.png"  alt="" style="left: 989.30px;top: 617.20px;cursor: pointer;" id="opt2" onclick="optBtn2()"/>
+            <img src="img/opt1_1.png"  alt="" style="left: 757.55px;top: 790.90px;cursor: pointer;" id="opt3" onclick="optBtn3()"/>
+            <img src="img/opt1_1.png"  alt="" style="left: 526.70px;top: 617.20px;cursor: pointer;" id="opt4" onclick="optBtn4()"/>
+            <img src="img/opt1_1.png"  alt="" style="left: 609.05px;top: 359px;cursor: pointer;" id="opt5" onclick="optBtn5()"/>
+            <img src="img/text1.png"  alt="" style="left: 1040.45px;top: 359.05px;" id="text1"/>
+            <img src="img/text2.png"  alt="" style="left: 1125.65px;top: 617.55px;" id="text2"/>
+            <img src="img/text3.png"  alt="" style="left: 892.90px;top: 790.55px;" id="text3"/>
+            <img src="img/text4.png"  alt="" style="left: 67.45px;top: 618px;" id="text4"/>
+            <img src="img/text5.png"  alt="" style="left: 149.45px;top: 359.05px;" id="text5"/>
+            <img src="../../img/continue.png"  alt="" style="left: 1418.30px;top:829.35px;cursor: pointer;display: none;" id="continue0" onclick="continueBtn0()"/>
+        </div>
+        <div id="cont0" style="position: absolute;display: none;">
+            <img src="../../img/background.png" style="display: none;" id="background" alt=""/>
+            <img src="../../img/bgd.png" id="bgd" alt=""/>
+            <img src="../../img/titleR.png"  alt="" style="left: 1306.75px;top: 0.15px;" id="titleR"/>
+            <img src="../../img/m4TitleL.png"  alt="" style="left: 0px;top: 13.65px;" id="titleL1"/>
+            <img src="img/head2_1.png"  alt="" style="left: 133.10px;top: 105px;" id="head2_1"/>
+            <img src="img/head3_1.png"  alt="" style="left: 71.75px;top: 164.20px;" id="head3_1"/>
+            <img src="img/answerbox1.png"  alt="" style="left: 23.25px;top: 322.30px;" id="answerbox1"/>
+            <img src="img/answerbox.png"  alt="" style="left: 353.40px;top: 350.20px;width: 340px;height: 60px;" id="answerbox1_1"/>
+            <img src="img/answerbox.png"  alt="" style="left: 353.40px;top: 450.20px;width: 340px;height: 60px;" id="answerbox1_2"/>
+            <img src="img/answerbox.png"  alt="" style="left: 353.40px;top: 550.20px;width: 340px;height: 60px;" id="answerbox1_3"/>
+            <img src="img/answerbox2.png"  alt="" style="left: 863.25px;top: 322.30px;" id="answerbox2"/>
+            <img src="img/answerbox.png"  alt="" style="left: 982.75px;top: 350.20px;width: 340px;height: 60px;" id="answerbox2_1"/>
+            <img src="img/answerbox.png"  alt="" style="left: 982.75px;top: 450.20px;width: 340px;height: 60px;" id="answerbox2_2"/>
+            <img src="img/answerbox.png"  alt="" style="left: 982.75px;top: 560.20px;width: 340px;height: 60px;" id="answerbox2_3"/>
+            <img src="img/box1_1.png"  alt="" style="left: 191.30px;top: 682.95px;cursor: pointer;" id="a1" class="drag1"/>
+            <img src="img/box2_1.png"  alt="" style="left: 629.30px;top: 682.95px;cursor: pointer;" id="a2" class="drag1"/>
+            <img src="img/box3_1.png"  alt="" style="left: 1071.30px;top: 682.95px;cursor: pointer;" id="a3" class="drag1"/>
+            <img src="img/box4_1.png"  alt="" style="left: 191.30px;top: 802.95px;cursor: pointer;" id="a4" class="drag1"/>
+            <img src="img/box5_1.png"  alt="" style="left: 629.30px;top: 802.95px;cursor: pointer;" id="a5" class="drag1"/>
+
+            <img src="img/box1_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box2_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box3_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box4_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box5_2.png" alt="" style="display: none;" class="drag2"/>
+
+            <img src="../../img/submit.png" id="submit1" alt="" style="left: 1438.30px;top:829.35px;cursor: pointer;" onclick="submitBtn1()"/>
+            <img src="../../img/Reset.png" id="Reset1" alt="" style="left: 1158.30px;top:829.35px;cursor: pointer;" onclick="againBtn1()"/>
+            <img src="img/correct.png" alt="" style="left: -6px;top: 394.20px;display: none;" id="right1"/>
+            <img src="img/correct2.png" alt="" style="left: -6px;top: 394.20px;display: none;" id="right2"/>
+            <img src="../../img/tryAgainBg.png" alt="" style="left: -6px;top: 394.20px;display: none;" id="tryAgainBg1"/>
+            <img src="../../img/continue.png" id="continue1" alt="" style="left: 1418.30px;top:829.35px;cursor: pointer;display: none;" onclick="continueBtn1()"/>
+            <img src="../../img/tryAgain.png" alt="" style="left: 1348.35px;top:849.40px;cursor: pointer;display: none;" id="againBtn1" onclick="againBtn1()"/>
+
+        </div>
+        
+        <audio id="myAudio" onclick="myAudioBtn()" style="position: absolute;left: 300px;"></audio>
+    </div>
+</body>
+<script>
+    var start = IsPC() ? "mousedown" : "touchstart";
+    var move = IsPC() ? "mousemove" : "touchmove";
+    var end = IsPC() ? "mouseup" : "touchend";
+    var flag = false;
+    var j = 0;
+    var num1 = 0,num2 = 0,num3 = 0,num4 = 0,num5 = 0,totalNum = 0,Sum = 0;
+    var clearNum;
+    function indexShow(){
+        myVideo1();
+        $('#videoPause1').hide();
+        setTimeout(function(){
+            $('#m4bg4').hide();
+        },200);
+    }
+    var videoTestModel = true;
+    function myVideo1(){	
+        testVideo('content', 'videoMP4', 'video/m4_4.mp4', videoTestModel);
+        var myVideo = document.querySelector('#videoMP4');
+        //myVideo.controls = false;
+        $('#viodeContent').show();//页面
+        $('#videoMP4').show();//声音
+        myVideo.play();
+        myVideo.onended = function () {
+            setTimeout(function(){
+                $('#viodeContent').hide(); 
+                $('#viodeContent').remove();         
+                $('#videoMP4').remove(); 
+            },1000);
+            $('#main').fadeIn(1500); 
+            Ahover();
+            $('#text1').css("left", "+=2000px");
+            $('#text2').css("left", "+=2000px");
+            $('#text3').css("left", "+=2000px");
+            $('#text4').css("left", "-=2000px");
+            $('#text5').css("left", "-=2000px");
+        }
+    }
+    function Ahover(){
+        $('#opt1').hover(function(){
+            $('#opt1').attr('src','img/opt1_2.png');
+        },function(){
+            $('#opt1').attr('src','img/opt1_1.png');
+        });
+        $('#opt2').hover(function(){
+            $('#opt2').attr('src','img/opt1_2.png');
+        },function(){
+            $('#opt2').attr('src','img/opt1_1.png');
+        });
+        $('#opt3').hover(function(){
+            $('#opt3').attr('src','img/opt1_2.png');
+        },function(){
+            $('#opt3').attr('src','img/opt1_1.png');
+        });
+        $('#opt4').hover(function(){
+            $('#opt4').attr('src','img/opt1_2.png');
+        },function(){
+            $('#opt4').attr('src','img/opt1_1.png');
+        });
+        $('#opt5').hover(function(){
+            $('#opt5').attr('src','img/opt1_2.png');
+        },function(){
+            $('#opt5').attr('src','img/opt1_1.png');
+        });
+        clearNum = setInterval(function()  {
+            if(num1 == 1){
+                $('#opt1').hover(function(){
+                    $('#opt1').attr('src','img/opt2_2.png');
+                },function(){
+                    $('#opt1').attr('src','img/opt2_1.png');
+                });
+            }
+            if(num2 == 1){
+                $('#opt2').hover(function(){
+                    $('#opt2').attr('src','img/opt2_2.png');
+                },function(){
+                    $('#opt2').attr('src','img/opt2_1.png');
+                });
+            }
+            if(num3 == 1){
+                $('#opt3').hover(function(){
+                    $('#opt3').attr('src','img/opt2_2.png');
+                },function(){
+                    $('#opt3').attr('src','img/opt2_1.png');
+                });
+            }
+            if(num4 == 1){
+                $('#opt4').hover(function(){
+                    $('#opt4').attr('src','img/opt2_2.png');
+                },function(){
+                    $('#opt4').attr('src','img/opt2_1.png');
+                });
+            }
+            if(num5 == 1){
+                $('#opt5').hover(function(){
+                    $('#opt5').attr('src','img/opt2_2.png');
+                },function(){
+                    $('#opt5').attr('src','img/opt2_1.png');
+                });
+            }
+        }, 100);
+        
+    }
+    // <img src="img/text1.png"  alt="" style="left: 1040.45px;top: 359.05px;" id="text1"/>
+    //         <img src="img/text2.png"  alt="" style="left: 1125.65px;top: 617.55px;" id="text2"/>
+    //         <img src="img/text3.png"  alt="" style="left: 892.90px;top: 790.55px;" id="text3"/>
+    //         <img src="img/text4.png"  alt="" style="left: 67.45px;top: 618px;" id="text4"/>
+    //         <img src="img/text5.png"  alt="" style="left: 149.45px;top: 359.05px;" id="text5"/>
+    function optBtn1(){
+        num1 = 1;
+        sum = num1+num2+num3+num4+num5;
+        //$('#text1').css("left", "+=2000px");
+        $('#text2').css("left", "2000px");
+        $('#text3').css("left", "2000px");
+        $('#text4').css("left", "-2000px");
+        $('#text5').css("left", "-2000px");
+        //$('#text1').hide();
+        $('#text2').hide();
+        $('#text3').hide();
+        $('#text4').hide();
+        $('#text5').hide();
+        //if(num1 == 0){
+            $('#text1').show();
+            $('#text1').animate({
+                left: "1040.45px"
+            });
+            totalNum++;
+            readSomeThing('audio/fly.mp3');
+            myAudio.onended = function(){
+                readSomeThing('audio/text1.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('');
+                    if(sum == 5){
+                        $('#continue0').show();
+                    }
+                }
+            }
+            //$('#text1').hide();
+            $('#text2').hide();
+            $('#text3').hide();
+            $('#text4').hide();
+            $('#text5').hide();
+            $('#opt1').attr('src','img/opt2_1.png');
+            console.log(totalNum);
+        //}
+        
+
+    }
+    function optBtn2(){
+        num2 = 1;
+        sum = num1+num2+num3+num4+num5;
+        $('#text1').css("left", "+=2000px");
+        //$('#text2').css("left", "2000px");
+        $('#text3').css("left", "2000px");
+        $('#text4').css("left", "-2000px");
+        $('#text5').css("left", "-2000px");
+        //$('#text2').hide();
+        $('#text1').hide();
+        $('#text3').hide();
+        $('#text4').hide();
+        $('#text5').hide();
+        //if(num2 == 0){
+            $('#text2').show();
+            $('#text2').animate({
+                left: "1125.65px"
+            });
+            totalNum++;
+            readSomeThing('audio/fly.mp3');
+            myAudio.onended = function(){
+                readSomeThing('audio/text2.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('');
+                    if(sum == 5){
+                        $('#continue0').show();
+                    }
+                }
+            }
+            $('#text1').hide();
+            //$('#text2').hide();
+            $('#text3').hide();
+            $('#text4').hide();
+            $('#text5').hide();
+            $('#opt2').attr('src','img/opt2_1.png');
+            console.log(totalNum);
+        //}
+
+    }
+    function optBtn3(){
+        num3 = 1;
+        sum = num1+num2+num3+num4+num5;
+        $('#text1').css("left", "+=2000px");
+        $('#text2').css("left", "2000px");
+        //$('#text3').css("left", "2000px");
+        $('#text4').css("left", "-2000px");
+        $('#text5').css("left", "-2000px");
+        $('#text1').hide();
+        $('#text2').hide();
+        //$('#text3').hide();
+        $('#text4').hide();
+        $('#text5').hide();
+        //if(num3 == 0){
+            $('#text3').show();
+            $('#text3').animate({
+                left: "892.90px"
+            });
+            totalNum++;
+            readSomeThing('audio/fly.mp3');
+            myAudio.onended = function(){
+                readSomeThing('audio/text3.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('');
+                    if(sum == 5){
+                        $('#continue0').show();
+                    }
+                }
+            }
+            $('#text1').hide();
+            $('#text2').hide();
+            //$('#text3').hide();
+            $('#text4').hide();
+            $('#text5').hide();
+            $('#opt3').attr('src','img/opt2_1.png');
+            console.log(totalNum);
+        //}
+        
+    }
+    function optBtn4(){
+        num4 = 1;
+        sum = num1+num2+num3+num4+num5;
+        $('#text1').css("left", "+=2000px");
+        $('#text2').css("left", "2000px");
+        $('#text3').css("left", "2000px");
+        //$('#text4').css("left", "-2000px");
+        $('#text5').css("left", "-2000px");
+        $('#text1').hide();
+        $('#text2').hide();
+        $('#text3').hide();
+        //$('#text4').hide();
+        $('#text5').hide();
+        //if(num4 == 0){
+            $('#text4').show();
+            $('#text4').animate({
+                left: "67.45px"
+            });
+            totalNum++;
+            readSomeThing('audio/fly.mp3');
+            myAudio.onended = function(){
+                readSomeThing('audio/text4.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('');
+                    if(sum == 5){
+                        $('#continue0').show();
+                    }
+                }
+            }
+            $('#text1').hide();
+            $('#text2').hide();
+            $('#text3').hide();
+            //$('#text4').hide();
+            $('#text5').hide();
+            $('#opt4').attr('src','img/opt2_1.png');
+            console.log(totalNum);
+        //}
+
+    }
+    function optBtn5(){
+        num5 = 1;
+        sum = num1+num2+num3+num4+num5;
+        $('#text1').css("left", "+=2000px");
+        $('#text2').css("left", "2000px");
+        $('#text3').css("left", "2000px");
+        $('#text4').css("left", "-2000px");
+        //$('#text5').css("left", "-2000px");
+        $('#text1').hide();
+        $('#text2').hide();
+        $('#text3').hide();
+        $('#text4').hide();
+        //$('#text5').hide();
+        //if(num5 == 0){
+            $('#text5').show();
+            $('#text5').animate({
+            left: "149.45px"
+            });
+            totalNum++;
+            readSomeThing('audio/fly.mp3');
+            myAudio.onended = function(){
+                readSomeThing('audio/text5.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('');
+                    if(sum == 5){
+                        $('#continue0').show();
+                    }
+                }
+            }
+            $('#text1').hide();
+            $('#text2').hide();
+            $('#text3').hide();
+            $('#text4').hide();
+            //$('#text5').hide();
+            $('#opt5').attr('src','img/opt2_1.png');
+            console.log(totalNum);
+        //}
+    }
+    function continueBtn0(){
+        readSomeThing('');
+        $('#main').remove();
+        clearInterval(clearNum);
+        nowLoPage(2);
+        myVideo2();
+    }
+    function myVideo2(){	
+        testVideo('content', 'videoMP4', 'video/m4_4_1.mp4', videoTestModel);
+        var myVideo = document.querySelector('#videoMP4');
+        //myVideo.controls = false;
+        $('#viodeContent').show();//页面
+        $('#videoMP4').show();//声音
+        myVideo.play();
+        timeUp([0,9],2);
+        myVideo.onended = function () {
+            setTimeout(function(){
+                $('#viodeContent').hide(); 
+                $('#viodeContent').remove();         
+                $('#videoMP4').remove(); 
+            },1000);
+            $('#cont0').fadeIn(1500);
+            myDrag();
+        }
+    }
+    //myDrag();
+    function myDrag() {
+        drag = new Drag5($('.drag1'), [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]);
+        drag.dragFun();
+    }
+	var TextNum=0;
+    function submitBtn1(){
+		TextNum++;
+        if (dragAns5.toString() == "1,1,1,1,1") {
+                $('#right1').show();
+                $('#Reset1').hide();
+                $('#continue1').show();
+                $('#submit1').hide();
+                readSomeThing('../../audio/Correct.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('');
+                }
+                document.querySelector('#a1').style.pointerEvents = 'none';
+                document.querySelector('#a2').style.pointerEvents = 'none';
+                document.querySelector('#a3').style.pointerEvents = 'none';
+                document.querySelector('#a4').style.pointerEvents = 'none';
+                document.querySelector('#a5').style.pointerEvents = 'none';
+        }else if(flag1){
+			if(TextNum<3){
+				$('#tryAgainBg1').show();
+				$('#againBtn1').show();
+				$('#submit1').hide();
+				$('#Reset1').hide();
+				readSomeThing('../../audio/again.mp3');
+				myAudio.onended = function(){
+					readSomeThing('');
+				}
+			}else{
+				$('#right2').show();
+				$('#tryAgainBg1').hide();
+				$('#againBtn1').hide();
+				$('#submit1').hide();
+				$('#Reset1').hide();
+				$('#continue1').show();
+				readSomeThing('../../audio/Slide3_Incorrect.mp3');
+				myAudio.onended = function(){
+					readSomeThing('');
+				}
+			}
+			document.querySelector('#a1').style.pointerEvents = 'none';
+            document.querySelector('#a2').style.pointerEvents = 'none';
+            document.querySelector('#a3').style.pointerEvents = 'none';
+            document.querySelector('#a4').style.pointerEvents = 'none';
+            document.querySelector('#a5').style.pointerEvents = 'none';
+        }
+    }
+    function againBtn1(){
+        flag1 = false;
+        $('#tryAgainBg1').hide();
+        $('#againBtn1').hide();
+        $('#submit1').show();
+		$('#Reset1').show();
+        readSomeThing('');
+        timeNum = 0;
+        timeNum1 = 0;
+        YourAns5 = [0, 0, 0, 0, 0];
+		dragAns5= [0, 0, 0, 0, 0];
+        $('.drag2').css({ left: '2000px', top: '2000px', display: "none" });
+        $('#a1').css({ left: '191.30px', top: '682.95px', display: "block" });
+        $('#a2').css({ left: '629.30px', top: '682.95px', display: "block" });
+        $('#a3').css({ left: '1071.30px', top: '682.95px', display: "block" });
+        $('#a4').css({ left: '191.30px', top: '802.95px', display: "block" });
+        $('#a5').css({ left: '629.30px', top: '802.95px', display: "block" });
+        document.querySelector('#a1').style.pointerEvents = 'auto';
+        document.querySelector('#a2').style.pointerEvents = 'auto';
+        document.querySelector('#a3').style.pointerEvents = 'auto';
+        document.querySelector('#a4').style.pointerEvents = 'auto';
+        document.querySelector('#a5').style.pointerEvents = 'auto';
+    }
+    
+    function continueBtn1(){
+        myVideo3();
+        readSomeThing('')
+        setTimeout(function(){
+            $('#cont0').hide();
+        },500);
+        readSomeThing('');
+        nowLoPage(4);
+    }
+    function myVideo3(){	
+        testVideo('content', 'videoMP4', 'video/m4_4_2.mp4', videoTestModel);
+        var myVideo = document.querySelector('#videoMP4');
+        //myVideo.controls = false;
+        $('#viodeContent').show();//页面
+        $('#videoMP4').show();//声音
+        myVideo.play();
+        myVideo.onended = function () {
+            setTimeout(function(){
+                setMyCompleted();
+                $('#viodeContent').hide(); 
+                $('#viodeContent').remove();         
+                $('#videoMP4').remove(); 
+                $('#cont0').remove();
+            },3000);
+        }
+    }
+    function readSomeThing(url) {
+        //myAudio.controls = true;
+		document.body.appendChild(myAudio);
+        myAudio.pause();
+        myAudio.src = url;
+        myAudio.load();
+        myAudio.play();
+    }
+    function videoPauseBtn(){
+        $('#videoPause').show();
+        videoMP4.pause();
+    }
+    function myvideoPlay(){
+        var videoMP4 = document.querySelector('#videoMP4');
+        videoMP4.play();
+        $('#videoPause').hide();
+    }
+    function videoBtn(){
+        if(videoMP4.paused){
+            videoMP4.play();
+        }else{
+            videoMP4.pause();
+        }
+    }
+    function videoPlay(){
+        var videoMP4 = document.querySelector('#videoMP4');
+        var myAudio = document.querySelector('#myAudio');
+        if(videoMP4){
+            videoMP4.play();
+        }
+        if(myAudio){
+            myAudio.play();
+        }
+    }
+    function videoPause(){
+        var videoMP4 = document.querySelector('#videoMP4');
+        var myAudio = document.querySelector('#myAudio');
+        if(videoMP4){
+            videoMP4.pause();
+        }
+        if(myAudio){
+            myAudio.pause();
+        }
+    }
+    var sub0Status
+    window.addEventListener("message", messageHandler, true);
+    function messageHandler(e) {
+        var dataStr = e.data;
+            var list = dataStr.split("#");
+
+            if (list[0] == "getAllSubStatus") {
+                sub0Status  =list[1].split("");
+            } else if (list[0] == "lovideoMP4play") {
+                console.log("lovideoMP4play");
+                videoBtn();
+            }else if (list[0] == "videoPlay") {
+                videoPlay();
+            }else if (list[0] == "videoPause") {
+                videoPause();
+            }
+    }
+    function getAllSubStatus(num) {
+        console.log('getAllSubStatus');
+        window.parent.postMessage("getAllSubStatus#" + num, "*");
+    }
+    function getObj(obj) {
+        return document.getElementById(obj);
+    }
+    var s = 0;
+
+    function setMyCompleted(obj) {
+        window.parent.postMessage("setCompleted#" + obj, "*");
+    }
+
+    function totalLoPage(num) {
+        window.parent.postMessage("totalPage#" + num, "*");
+    }
+
+    function nowLoPage(num) {
+        window.parent.postMessage("nowPage#" + num, "*");
+    }
+    function setMyVideoState(str){
+        //window.parent.postMessage("setVideoState#"+str,"*");
+    }
+    function fingerShow(num){
+        window.parent.postMessage("fingerShow#"+num,"*");
+    }
+    function unNav(str){
+        window.parent.postMessage("unNav#"+str,"*");
+    }
+    function tabToggle(str){
+        window.parent.postMessage("tabToggle#"+str,"*");
+    }
+    function updateMyPercent(str){
+        //window.parent.postMessage("updatePercent#"+str,"*");
+    }
+</script>
+</html>

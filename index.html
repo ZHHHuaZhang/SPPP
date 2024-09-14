@@ -1,0 +1,713 @@
+﻿<!doctype html>
+<html full>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script language="javascript" src="js/function.js" type="text/javascript"></script>
+<script language="javascript" src="js/parseLms.js" type="text/javascript"></script>
+<script language="javascript" src="js/pageResponse.js" type="text/javascript"></script>
+<script language="javascript" src="js/SCOFunctions.js" type="text/javascript"></script>
+<script language="javascript" src="js/common.js" type="text/javascript"></script>
+<script language="javascript" src="js/APIWrapper.js" type="text/javascript"></script>
+<script language="javascript" src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+window.jQuery = window.myjq = jQuery;
+//var tocBtnMCIdxList=["1","2","3"];//章节的id
+var sub0_en=["lo/en/m1/m0.html","lo/en/m1/m1.html","lo/en/m1/m1_1.html","lo/en/m1/m1_2.html","lo/en/m1/m1_3.html","lo/en/m1/m1_4.html","lo/en/m1/m1_4_1/index2.html","lo/en/m1/m1_4_1_1.html","lo/en/m1/m1_4_1_2.html","lo/en/m1/m1_4_1_3.html","lo/en/m1/m1_4_1_4.html","lo/en/m1/m1_4_1_5.html","lo/en/m1/m1_4_1_6.html","lo/en/m1/m1_4_1_7.html","lo/en/m1/m1_4_2/index.html","lo/en/m1/m1_4_2_1.html","lo/en/m1/m1_4_2_2.html","lo/en/m1/m1_4_2_3.html","lo/en/m1/m1_4_2_4.html","lo/en/m1/m1_4_2_5.html","lo/en/m1/m1_4_3/m1_4_3.html","lo/en/m1/m1_4_3/m1_4_3_1.html","lo/en/m1/m1_4_3/m1_4_3_2.html","lo/en/m1/m1_4_3/m1_4_3_3.html","lo/en/m1/m1_4_4.html","lo/en/m2/m2_0/index.html","lo/en/m2/m2_1/index.html","lo/en/m2/m2_2/index.html","lo/en/m2/m2_5/index.html","lo/en/m3/m3_0/index.html","lo/en/m3/m3_1/index.html","lo/en/m3/m3_2/index.html","lo/en/m3/m3_3/index.html","lo/en/m3/m3_4/index.html","lo/en/m3/m3_6/index.html","lo/en/m4/m4_0/index.html","lo/en/m4/m4_1/index.html","lo/en/m4/m4_2/index.html","lo/en/m4/m4_3/index.html","lo/en/m4/m4_4/index.html","lo/en/m4/m4_5/index.html","lo/en/m5/m5_0/index.html","lo/en/m5/m5_1/index.html","lo/en/m5/m5_3/index.html","lo/en/m5/m5_5/index.html","lo/en/m5/m5_6/index.html"]; //连接地址
+
+var sub0_cn=["lo/cn/m1/m0.html","lo/cn/m1/m1.html","lo/cn/m1/m1_1.html","lo/cn/m1/m1_2.html","lo/cn/m1/m1_3.html","lo/cn/m1/m1_4.html","lo/cn/m1/m1_4_1/index2.html","lo/cn/m1/m1_4_1_1.html","lo/cn/m1/m1_4_1_2.html","lo/cn/m1/m1_4_1_3.html","lo/cn/m1/m1_4_1_4.html","lo/cn/m1/m1_4_1_5.html","lo/cn/m1/m1_4_1_6.html","lo/cn/m1/m1_4_1_7.html","lo/cn/m1/m1_4_2/index.html","lo/cn/m1/m1_4_2_1.html","lo/cn/m1/m1_4_2_2.html","lo/cn/m1/m1_4_2_3.html","lo/cn/m1/m1_4_2_4.html","lo/cn/m1/m1_4_2_5.html","lo/cn/m1/m1_4_3/m1_4_3.html","lo/cn/m1/m1_4_3/m1_4_3_1.html","lo/cn/m1/m1_4_3/m1_4_3_2.html","lo/cn/m1/m1_4_3/m1_4_3_3.html","lo/cn/m1/m1_4_4.html","lo/cn/m2/m2_0/index.html","lo/cn/m2/m2_1/index.html","lo/cn/m2/m2_2/index.html","lo/cn/m2/m2_5/index.html","lo/cn/m3/m3_0/index.html","lo/cn/m3/m3_1/index.html","lo/cn/m3/m3_2/index.html","lo/cn/m3/m3_3/index.html","lo/cn/m3/m3_4/index.html","lo/cn/m3/m3_6/index.html","lo/cn/m4/m4_0/index.html","lo/cn/m4/m4_1/index.html","lo/cn/m4/m4_2/index.html","lo/cn/m4/m4_3/index.html","lo/cn/m4/m4_4/index.html","lo/cn/m4/m4_5/index.html","lo/cn/m5/m5_0/index.html","lo/cn/m5/m5_1/index.html","lo/cn/m5/m5_3/index.html","lo/cn/m5/m5_5/index.html","lo/cn/m5/m5_6/index.html"]; //连接地址
+
+var sub0_gd=["lo/gd/m1/m0.html","lo/gd/m1/m1.html","lo/gd/m1/m1_1.html","lo/gd/m1/m1_2.html","lo/gd/m1/m1_3.html","lo/gd/m1/m1_4.html","lo/gd/m1/m1_4_1/index2.html","lo/gd/m1/m1_4_1_1.html","lo/gd/m1/m1_4_1_2.html","lo/gd/m1/m1_4_1_3.html","lo/gd/m1/m1_4_1_4.html","lo/gd/m1/m1_4_1_5.html","lo/gd/m1/m1_4_1_6.html","lo/gd/m1/m1_4_1_7.html","lo/gd/m1/m1_4_2/index.html","lo/gd/m1/m1_4_2_1.html","lo/gd/m1/m1_4_2_2.html","lo/gd/m1/m1_4_2_3.html","lo/gd/m1/m1_4_2_4.html","lo/gd/m1/m1_4_2_5.html","lo/gd/m1/m1_4_3/m1_4_3.html","lo/gd/m1/m1_4_3/m1_4_3_1.html","lo/gd/m1/m1_4_3/m1_4_3_2.html","lo/gd/m1/m1_4_3/m1_4_3_3.html","lo/gd/m1/m1_4_4.html","lo/gd/m2/m2_0/index.html","lo/gd/m2/m2_1/index.html","lo/gd/m2/m2_2/index.html","lo/gd/m2/m2_5/index.html","lo/gd/m3/m3_0/index.html","lo/gd/m3/m3_1/index.html","lo/gd/m3/m3_2/index.html","lo/gd/m3/m3_3/index.html","lo/gd/m3/m3_4/index.html","lo/gd/m3/m3_6/index.html","lo/gd/m4/m4_0/index.html","lo/gd/m4/m4_1/index.html","lo/gd/m4/m4_2/index.html","lo/gd/m4/m4_3/index.html","lo/gd/m4/m4_4/index.html","lo/gd/m4/m4_5/index.html","lo/gd/m5/m5_0/index.html","lo/gd/m5/m5_1/index.html","lo/gd/m5/m5_3/index.html","lo/gd/m5/m5_5/index.html","lo/gd/m5/m5_6/index.html"]; //连接地址
+
+
+var sub0=sub0_en //默认连接
+var totalPageList=[4,4,11,8,4,4,11,8,4,4,11,8,4,4,11,8,4,4,11,8,4,4,11,8,4,4,11,8,4,4,11,8,4,4,11,8];//每个lo的总页数
+var scoreLen=1; //分数个数
+var scoreMergerMethod="plus";//plus ave
+var CotnentTest=[1,0,0,0];
+var isPauseVideoing=false;
+var isShowToc=false;
+var isShowVideo=true;
+var language = "en";  //cn gd
+
+function loadInit() {
+	loadPage();
+	centerFun();
+	afc("bagContentContainer","o",1);
+	parseSusData();
+	OpeningInit();
+}
+function ContentInit() {
+	subClickNav(sub1Status);
+	//subClickNav(0);
+	afc("myContent","o",1);
+	playPauseTabToggle(true);
+	/*for(var i=0;i<sub0Status.length;i++){
+		//myjq('.btn_mask').eq(i).css('display','none');
+		myjq(".Content_Menu_mask").eq(i).css('display','none')
+	}*/
+}
+window.onresize=centerFun;
+window.onorientationchange=centerFun;
+function centerFun(){
+	pageResponse({
+		selectors : '#bagContentContainer',     //模块选择器，使用querySelectorAll的方法
+		mode : 'contain',     // auto || contain || cover ，默认模式为auto 
+		width : '1680',      //输入页面的宽度，只支持输入数值，默认宽度为320px
+		height : '1050'      //输入页面的高度，只支持输入数值，默认高度为504px
+	});
+}
+function stageScreenLoading(){
+	var htmlw=document.documentElement.clientWidth;
+	var htmlh=document.documentElement.clientHeight;
+	var ContentDiv=document.getElementById("loadbar");
+	ContentDiv.style.left=(document.documentElement.clientWidth-175)/2+"px";
+	ContentDiv.style.top=(document.documentElement.clientHeight-109)/2+"px";
+}
+function getContentLO(obj){
+	if(obj=="M4"){
+		return ContentLOM4
+	}else if(obj=="S"){
+		return sub2Status;
+	}else if(obj=="test"){
+		return CotnentTest;
+	}
+}
+function setContentLO(obj1,obj2){
+	if(obj1=="M4"){
+		ContentLOM4=obj2;
+	}else if(obj1=="S"){
+		sub2Status=obj2;
+	}
+	updateSusData();
+}
+function OnlyPlayVideo(){
+	document.getElementById("iframeLo").contentWindow.postMessage("videoPlay#"+"#","*");
+	isPauseVideoing=false;
+	playPauseTabToggle(true);
+}
+function OnlyPauseVideo(){
+	document.getElementById("iframeLo").contentWindow.postMessage("videoPause#"+"#","*");
+	isPauseVideoing=true;
+	playPauseTabToggle(false);
+}
+function Content_Menu_btn(inPoint){
+	sub2Status=0;
+	isShowVideo=true;
+	subClick(inPoint);
+	if(s("tocBar").style.display=="block"){
+ 		s("tocBar").style.display="none";
+ 	}
+}
+function tabToggle(){
+if(s("tocBar").style.display=="none"){
+	isShowToc=true;
+		s("tocBar").style.display="block";
+		}else{
+			isShowToc=false;
+			s("tocBar").style.display="none";
+			}
+			if(isPauseVideoing==true&&isShowToc==false){
+				OnlyPlayVideo();
+				return;
+			}
+	OnlyPauseVideo();
+	s("contentMask_mc").style.display="none";
+}
+function tabToggle2(){
+    if(s("tocBar").style.display=="none"){
+	isShowToc=true;
+		s("tocBar").style.display="block";
+	}else{
+	isShowToc=false;
+		s("tocBar").style.display="none";
+	}	
+	for (var i = 0; i<sub0Status.length; i++) {
+		if (sub0Status[i] == 2) {//已完成
+		    myjq(".Content_Menu_btn").eq(i).attr('src',"img/toc_btnC"+(i+1)+".png")
+		}
+	}
+}
+function prevLoClick(e){
+	sub2Status=0;//============================================================================
+	if(s("tocBar").style.display=="block"){s("tocBar").style.display="none";}
+	prevActivity();
+}
+function nextLoClick(e){
+	sub2Status=0;//============================================================================
+	if(s("tocBar").style.display=="block"){s("tocBar").style.display="none";}
+	nextActivity();
+}
+function ClickContentBtnMC(){
+	//contentMask_mc
+	afc("back_btn","d","none");
+    //totalPage(1);
+    //currentPage(1);
+	myjq("#zhuanghuan").attr('src','img/zhuanghuan.png');
+	afc("controlBar","d","block");
+  	for (var i = 0; i<sub0Status.length; i++) {
+		if (sub0Status[i] == 2) {//已完成
+		    myjq(".Content_Menu_btn").eq(i).attr('src',"img/toc_btn_p2.png");
+			//myjq(".Content_Menu_mask").eq(i).css('display','none')
+		} else if (sub0Status[i] == 1) {
+			myjq(".Content_Menu_btn").eq(i).attr('src',"img/toc_btn_p0.png");
+		}else{
+			myjq(".Content_Menu_btn").eq(i).attr('src',"img/toc_btn_p0.png");
+		}
+	}
+	//tocBtnBG);
+	s("tocBtnBG").innerHTML=tocBtnBG_arr[sub1Status];
+	myjq(".Content_Menu_btn").eq(sub1Status).attr('src',"img/toc_btn_p1.png");
+	
+	//==================================
+	//限制版代码
+	/*if(sub1Status<=0){
+		myjq("#per_btn").hide();
+		myjq("#next_btn").show();
+	}else if(sub1Status>=sub0Status.length-1){
+		myjq("#per_btn").show();
+		myjq("#next_btn").hide();
+	}else{
+		myjq("#per_btn").show();
+		myjq("#next_btn").show();
+	}
+	if(sub1Status<sub0Status.length){
+		myjq(".Content_Menu_btn").eq(sub1Status).attr('src',"img/toc_btnB"+(sub1Status+1)+".png")
+	}*/
+/*	if(sub0Status[sub1Status]==2){
+		myjq("#toc_menu_mask2").css('display','none');
+	}else{
+		myjq("#toc_menu_mask2").css('display','block')
+	}*/
+	// if(sub1Status==0){s("topBar").style.display="none";}else{s("topBar").style.display="block"}
+	playPauseTabToggle(true);
+	$('#unNav').hide();
+}
+function tocTabToggle(){
+	//BtnmoveX("tocBar",-250,100);
+}
+function toc_topBar_show(){
+	s("topBar").style.display="block";
+}
+function controlBarTabToggle(){
+	if(s("controlBar").style.display=="block"){
+		afc("controlBar","d","none")
+		myjq("#zhuanghuan").attr('src','img/zhuanghuan2.png');;
+		}else{afc("controlBar","d","block")
+		myjq("#zhuanghuan").attr('src','img/zhuanghuan.png');;
+		}
+	
+	if(s("tocBar").style.display=="block" && sub1Status!=0){
+		if (sub1Status!=0) {
+			s("tocBar").style.display="none";
+		}
+	}
+}
+function playPauseClick2(){
+	/*var videoMP4;
+	var videoStart=true;
+	try{
+		videoMP4 =  document.getElementById("iframeLo").contentDocument.getElementById('videoMP4');
+	} catch(e){
+		 try{
+			 videoMP4 =  window.frames['iframeLo'].document.getElementById('videoMP4');
+		} catch(e){
+              videoStart=false;
+		}
+	}*/
+	//if(videoMP4||videoStart==false){
+		var div = document.getElementById("playPauseBtn");
+		if(div.tabVisiblePlayBtn){
+			 document.getElementById("iframeLo").contentWindow.postMessage("videoPause#"+"#","*");
+			playPauseTabToggle(false);
+		}else{
+			document.getElementById("iframeLo").contentWindow.postMessage("videoPlay#"+"#","*");
+			playPauseTabToggle(true);
+		}
+	//}
+}
+function playPauseClick(e){
+	//var videoMP4=iframeLo.document.getElementById("videoMP4");
+	if(s("tocBar").style.display=="block"){
+		isShowToc=false;
+		s("tocBar").style.display="none";
+		}
+    playPauseClick2();
+}
+function playPauseClick3(e){
+	//var videoMP4=iframeLo.document.getElementById("videoMP4");
+	if(s("tocBar").style.display=="block"){s("tocBar").style.display="none";}
+	clearVideo();
+	$('#playPauseBtn').attr('src', 'img/pause_btn.png');
+	$('#playBtn').attr('src', 'img/pause1_btn.png');
+	playPauseTabToggle(false);
+    playPauseClick2();
+
+}
+function playPauseClick4(e){
+	//var videoMP4=iframeLo.document.getElementById("videoMP4");
+	if(s("tocBar").style.display=="block"){s("tocBar").style.display="none";}
+	clearVideo();
+	playPauseTabToggle(true);
+    playPauseClick2();
+    $('#playPauseBtn').attr('src', 'img/play1_btn.png');
+	$('#playBtn').attr('src', 'img/play_btn.png');
+}
+function playPauseTabToggle(isVisiblePlayBtn){
+	var div = document.getElementById("playPauseBtn");
+	if (isVisiblePlayBtn != undefined) {
+		div.tabVisiblePlayBtn=!isVisiblePlayBtn;
+	}
+	div.tabVisiblePlayBtn=isVisiblePlayBtn;
+	//div.tabVisiblePlayBtn=!div.tabVisiblePlayBtn;
+	if(div.tabVisiblePlayBtn){
+       afc("playPauseBtn","s","img/pause_btn.png");
+	}else{
+       afc("playPauseBtn","s","img/play_btn.png");
+	}
+}
+function playPauseBtn(){
+	$('#playPauseBtn').attr('src', 'img/pause_btn.png');
+	$('#playBtn').attr('src', 'img/pause1_btn.png');
+}
+function showbackbtn(){
+	afc("back_btn","d","block");
+}
+function clickQuit(){
+	var hrefstr=window.top.location.href;
+	var gotoUrl=getscoplayhtml(hrefstr);
+	if(gotoUrl=="/htm/sco_player.htm"){
+		var browserName=navigator.appName;
+		if (browserName=="Netscape") {
+			if (window.top != window && window.top != null) {
+				window.top.opener = null;
+				window.top.open('','_self','');
+				window.top.close();
+			}else{
+				window.opener = null;
+				window.open('','_self','');
+				window.close();
+			}
+		} else if (browserName=="Microsoft Internet Explorer") {
+			if (window.top != window && window.top != null) {
+				window.top.opener = null;
+				window.top.close();
+			}else{
+				window.opener = null;
+				window.close();
+			}
+		}
+	}else{
+		if(parent.scoPlayerSubmit){
+			parent.scoPlayerSubmit();
+		}
+	}
+	/////fun
+	function find_f(str, from, to) {
+		var str = str.toLowerCase()+to;
+		var from = from.toLowerCase();
+		var to = to.toLowerCase();
+		var tmp = str.substring(str.indexOf(from)+from.length);
+		return tmp.substring(0, tmp.indexOf(to));
+	}
+	function _wbModuleGetTime(datetime){
+
+			if ( datetime.getMonth() > 9 )
+				month = datetime.getMonth() + 1
+			else
+				month = '0' + (datetime.getMonth() + 1 )
+
+			if ( datetime.getDate() > 9 )
+				day = datetime.getDate()
+			else
+				day = '0' + datetime.getDate()
+
+			if ( datetime.getHours() > 9 )
+				hour = datetime.getHours()
+			else
+				hour = '0' + (datetime.getHours() + 1 )
+
+			if ( datetime.getMinutes() > 9 )
+				minutes = datetime.getMinutes()
+			else
+				minutes = '0' + datetime.getMinutes()
+
+			if ( datetime.getSeconds() > 9 )
+				seconds = datetime.getSeconds()
+			else
+				seconds = '0' + datetime.getSeconds()
+
+			time = datetime.getFullYear() + month + day + hour  + minutes  + seconds
+
+			return time;
+
+	}
+}
+var timer3;
+function fingerShow(){
+	window.clearTimeout(timer3);
+	$('#finger').show();
+	timer3=window.setTimeout(function(){
+		$('#finger').hide();
+	},4000) 
+}
+function getscoplayhtml(hrefstr){
+	var urlname="";
+	var isHaveTouch=(IsPC())?false:true;
+	if(isHaveTouch){//手机模板
+		urlname="/htm/sco_player_mobile.htm";
+	}else{//pc
+		if(hrefstr.indexOf("sco_player_mobile.htm")>=0){
+			urlname="/htm/sco_player_mobile.htm";
+		}else{
+			urlname="/htm/sco_player.htm";
+		}
+	}
+	return urlname;
+	//是否电脑
+	function IsPC()  {  
+	   var userAgentInfo = navigator.userAgent;  
+	   var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");  
+	   var flag = true;  
+	   for (var v = 0; v < Agents.length; v++) {  
+		   if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }  
+	   }  
+	   return flag;  
+	}
+}
+function unNav(){
+	$('#unNav').show();
+}
+function gotohome(){
+	if(s("tocBar").style.display=="block"){
+ 		s("tocBar").style.display="none";
+ 	}
+	afc("myContent","o",0);
+    document.getElementById("iframeLo").src = "";
+	getId('Openingcont').style.display="block";
+}
+</script>
+<title>en</title>
+<style type="text/css">
+body {
+	background-color: #FFFFFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin: 0px;
+	overflow:hidden;
+}
+div{
+	position: absolute;
+}
+img{display:block;}
+[full]{ width:100%; height:100%;}
+.toBig{
+	transform: scale(1,1);
+	-ms-transform: scale(1,1);	/* IE 9 */
+	-webkit-transform: scale(1,1);	/* Safari 和 Chrome */
+	-o-transform: scale(1,1);	/* Opera */
+	-moz-transform: scale(1,1);
+}
+.toBig:hover{
+	transform: scale(1.2,1.2);
+	-ms-transform: scale(1.2,1.2);	/* IE 9 */
+	-webkit-transform: scale(1.2,1.2);	/* Safari 和 Chrome */
+	-o-transform: scale(1.2,1.2);	/* Opera */
+	-moz-transform: scale(1.2,1.2);
+}
+#navText{
+	position: absolute;
+	display: -webkit-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center; 
+}
+span{
+	vertical-align: middle;
+	font-size: 30px;
+	color: #FFFFFF;
+	z-index: 99;
+	font-family: arial,MHeiHK;
+}
+#finger{
+	-webkit-animation: float ease-in-out 1s infinite;
+  	animation: float ease-in-out 1s infinite;
+}
+@-webkit-keyframes float {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+}
+
+@keyframes float {
+   0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+  }
+}
+.button {
+    background-color: #5A97FF; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    left: 373px; 
+    top: 104px;
+    border-radius: 5px;
+    font-weight: bold;
+
+}
+#timeNum{
+    padding: 0px;
+    width:446px;
+    height:108px;
+    display: table-cell;
+    vertical-align:middle;
+    color: #333333;
+    font-size: 18px;
+    font-family: Arial;
+    word-wrap:break-word;
+}
+ @keyframes minMax{
+			0%{ transform:scale(0.8); opacity:0.8}
+			50%{ transform:scale(1); opacity:1}
+			100%{ transform:scale(0.8); opacity:0.8}
+		}
+		@-webkit-keyframes minMax{
+			0%{ transform:scale(0.8); opacity:0.8}
+			50%{ transform:scale(1); opacity:1}
+			100%{ transform:scale(0.8); opacity:0.8}
+		}
+		@-moz-keyframes minMax{
+			0%{ transform:scale(0.8); opacity:0.8}
+			50%{ transform:scale(1); opacity:1}
+			100%{ transform:scale(0.8); opacity:0.8}
+		}
+		@-o-keyframes minMax{
+			0%{ transform:scale(0.8); opacity:0.8}
+			50%{ transform:scale(1); opacity:1}
+			100%{ transform:scale(0.8); opacity:0.8}
+		}
+
+		#cls{
+			cursor:pointer;
+			animation: minMax 0.5s ease-in-out infinite; 
+			-moz-animation: minMax 0.5s ease-in-out infinite; 
+			-o-animation: minMax 0.5s ease-in-out infinite; 
+			-webkit-animation: minMax 0.5s ease-in-out infinite;
+			-webkit-transform: translate3d(0,0,0);
+			-moz-transform: translate3d(0,0,0);
+			-ms-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+		}
+		
+</style>
+</head>
+
+<body full onLoad="loadInit()" onUnload="javascript:unloadExit()" scroll="no">
+                  
+		<div id="bagContentContainer"  style="opacity:0;" >
+            <div id="loadbar" style="width:1680px;height:1050px; background:#ffffff;" align="center">
+	                   <div id="loadbar" style=" margin:0 auto; margin-top:0px; margin-left:0px"> <img src="1.gif" width="1680" height="1050"></div>
+	         </div>
+			<div id="myContent" style="width:1680px;height:1050px;left:0px;top:0px;opacity:0;">
+
+				 <div><iframe id="iframeLo" frameborder="no" scrolling="no" allowtransparency="yes" style="position:absolute;width:1680px;height:1050px;left:0px;top:0px"></iframe></div>
+                 <div id="contentMask_mc" style="position:absolute; top:0px; left:0px; width:1680px; height:1050px; display:none;"><img src="img/mask_mc.png" width="1680" height="1050">
+                    <div style="position: absolute; width: 216.8px; height: 44.85px; top: 507.25px; left: 528.95px; cursor: pointer;"><img src="img/menu_btn.png"  onClick="tabToggle2()"></div>
+                 </div>
+
+				 <div class="toBig" style="position:absolute;width:130px;height:41px;top:596px;left:1111px;cursor:pointer;display:none;" onClick="clickQuit()" id="back_btn"></div>
+                 <div id="tocBar" style="width:1680px;height:878px;left:0px;top:107px; display:none;"><!--toc-->
+                    <div style="position:absolute;width:1680px;height:878px;left:0px;top:0px;overflow-y:auto;overflow-x:hidden;">
+                    <div style="width: 1680px; height: 2330px;"><img src="img/toc_bg.png" width="1680" height="2330"></div>
+                    <!--背景-->
+                    <div id="tocBtnBG" style="width: 1680px; height: 2330px;top: -107px; left: 0px;"></div>   
+                    <div style="width: 1680px; height: 2330px;"><img id="tocbtnbg2" src="img/toc2.png" width="1680" height="2330"></div>
+                    <div id="toc_Menu_btn" style="width: 1680px; height: 2330px;top: -112px; left: 0px;"> 
+                    <div style="width: 945px; height: 50px; top: 130px; left: -18px;cursor:pointer;" onClick="Content_Menu_btn(1)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <!--m1-->
+                    <div style="width: 945px; height: 50px; top: 232px; left: -18px;cursor:pointer;" onClick="Content_Menu_btn(2)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>  
+                     
+                     <div style="width: 945px; height: 50px; top: 286px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(3)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 330px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(4)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 376px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(5)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 422px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(6)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 475px; left: 60px;cursor:pointer;" onClick="Content_Menu_btn(7)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     
+                     <div style="width: 945px; height: 50px; top: 520px; left: 100px;cursor:pointer;" onClick="Content_Menu_btn(8)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 562px; left: 100px;cursor:pointer;" onClick="Content_Menu_btn(9)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 610px; left: 100px;cursor:pointer;" onClick="Content_Menu_btn(10)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 654px; left: 100px;cursor:pointer;" onClick="Content_Menu_btn(11)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 698px; left: 100px;cursor:pointer;" onClick="Content_Menu_btn(12)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 744px; left: 100px;cursor:pointer;" onClick="Content_Menu_btn(13)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 80px; top: 790px; left: 100px;cursor:pointer;" onClick="Content_Menu_btn(14)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     
+                     <div style="width: 945px; height: 50px; top: 286px; left: 880px;cursor:pointer;" onClick="Content_Menu_btn(15)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 330px; left: 920px;cursor:pointer;" onClick="Content_Menu_btn(16)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 376px; left: 920px;cursor:pointer;" onClick="Content_Menu_btn(17)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 422px; left: 920px;cursor:pointer;" onClick="Content_Menu_btn(18)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 470px; left: 920px;cursor:pointer;" onClick="Content_Menu_btn(19)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 514px; left: 920px;cursor:pointer;" onClick="Content_Menu_btn(20)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 565px; left: 880px;cursor:pointer;" onClick="Content_Menu_btn(21)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 613px; left: 920px;cursor:pointer;" onClick="Content_Menu_btn(22)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 85px; top: 660px; left: 920px;cursor:pointer;" onClick="Content_Menu_btn(23)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 747px; left: 920px;cursor:pointer;" onClick="Content_Menu_btn(24)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                     <div style="width: 945px; height: 50px; top: 793px; left: 880px;cursor:pointer;" onClick="Content_Menu_btn(25)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div> 
+                    
+                    <!--m2-->
+                    <div style="width: 945px; height: 50px; top: 940px; left: -18px;cursor:pointer;" onClick="Content_Menu_btn(26)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 984px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(27)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1030px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(28)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1076px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(29)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    
+                    
+                     <!--m3-->
+                    <div style="width: 945px; height: 50px; top: 1208px; left: -18px;cursor:pointer;" onClick="Content_Menu_btn(30)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1256px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(31)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1300px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(32)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 80px; top: 1344px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(33)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1391px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(34)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1435px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(35)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    
+                    
+                     <!--m4-->
+                    <div style="width: 945px; height: 50px; top: 1541px; left: -18px;cursor:pointer;" onClick="Content_Menu_btn(36)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1587px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(37)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1635px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(38)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1679px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(39)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1727px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(40)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1773px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(41)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    
+                    <!--m5-->
+                    <div style="width: 945px; height: 50px; top: 1875px; left: -18px;cursor:pointer;" onClick="Content_Menu_btn(42)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 1921px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(43)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 80px; top: 1963px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(44)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 2008px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(45)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    <div style="width: 945px; height: 50px; top: 2053px; left: 20px;cursor:pointer;" onClick="Content_Menu_btn(46)"><img src="img/toc_btn_p0.png" width="945" height="50" style="position: absolute;" class="Content_Menu_btn"></div>
+                    
+                    </div>
+                    </div>
+                 <img id="tocping" src="img/ping.png" style="position:absolute;width:511px;height:50px;left:1051.35px;top:800px;" alt=""/> 
+                 </div><!--toc-->
+               <div id="controlBar" style="position:absolute; top:982px; left:0px; width:1680px; height:100px;display:block;">
+                <div style="position:absolute; width:1680px; left:0px; top:0px;"><img src="img/ui_2.png" width="1680" height="68" alt=""/></div> 
+                
+                <div style="position:absolute; width:880px; height:5px; left:284.9px; top:31px;" id="progresspoint">
+                  	<div style="position:absolute; width:880px; height:5px;"><img src="img/line1.png" width="880" height="5"></div>  
+                 	<div style="position:absolute; width:880px; height:5px; overflow:hidden;"><img src="img/line2.png" width="880" height="5"></div> 
+                    <div style="position:absolute; width:762px; height:5px; left:0px; display: none;"><img src="img/p.png" width="1680" height="6"></div>
+                </div>
+                
+                <div style="position: absolute; width: 100px; height: 68px; left: 125px;cursor:pointer;"><img src="img/menu_btn.png" width="100" height="68" onClick="tabToggle()"></div>
+                <div style="position: absolute; width: 100px; height: 68px; left: 13px;cursor:pointer"><img src="img/home.png" width="100" height="68" onClick="gotohome()"></div>
+                <div style="position: absolute; width: 81.45px; height: 34.55px; top: 20px; left: 1110px; display:none;" id="navText">
+                <span>1/12</span>
+                </div>
+                <div style="position: absolute; width: 100px; height: 68px; left: 1225px;"><img src="img/per_btn1.png" width="100" height="68"></div>
+                
+                <div style="position: absolute; width: 100px; height: 68px; left: 1460px;cursor:pointer"><img src="img/next_btn1.png" width="100" height="68"></div>
+                
+                <div id="per_btn" style="position: absolute; width: 100px; height: 68px; left:1225px;cursor:pointer"><img src="img/per_btn.png" width="100" height="68" onClick="prevLoClick()"></div>
+                
+                <div style="position: absolute; width: 100px; height: 68px; left: 1342px;cursor:pointer"><img src="img/play_btn.png" id="playPauseBtn" width="100" height="68" onClick="playPauseClick()"></div>
+                <div id="next_btn" style="position: absolute; width: 100px; height: 68px; left: 1460px;cursor:pointer"><img src="img/next_btn.png" width="100" height="68" onClick="nextLoClick()"></div>
+                
+              </div>
+              <div style="position: absolute; width: 100px; height: 68px; top:982px; left: 1562px;cursor:pointer"><img src="img/zhuanghuan.png" width="100" height="68" onClick="controlBarTabToggle()" id="zhuanghuan"></div>
+              
+              <img src="img/mask_mc.png" style="position: absolute; width: 284.05px; height: 66px; top: 654.2px; left: 930.25px; opacity:0; display:none;" id="toc_menu_mask2">
+          </div>
+          <!--opening-->
+          <div id="OpeningContent"  style="display:none;" >
+          <img src="play.png" style="position: absolute;left: 715px; top:400px; width: 250px; height: 250px; cursor: pointer; z-index: 99;" id="Openingplay" onClick="onclickOpeningPlay()">
+          <div id="VIDEO" full style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px;display: none;"></div>
+          <div id="Openingcont" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px; display: none;">
+          <img id="opening_bg" src="img/opening_bg.jpg" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px;"  alt=""/>
+          <img src="img/btn.png" style="position: absolute;left:1076.6px; top: 668px; width: 238px; height: 88px; cursor:pointer;" onClick="gotoMain('en')" alt=""/>
+          <img src="img/btn.png" style="position: absolute;left:1290px; top: 668px; width: 200px; height: 88px; cursor:pointer;" onClick="gotoMain('gd')" alt=""/>
+          <img src="img/btn.png" style="position: absolute;left:1490px; top: 668px; width: 200px; height: 88px; cursor:pointer;" onClick="gotoMain('cn')" alt=""/>
+          </div>
+          </div>
+<script>
+function OpeningInit(){
+	getId('OpeningContent').style.display="block";
+	if(language=="en"){
+		myjq("#opening_bg").attr('src','img/opening_bg.jpg');
+	    CreatVid('videoMP4',"video/opening");
+	}else if(language=="cn"){
+		myjq("#opening_bg").attr('src','img/opening_cn_bg.jpg');
+		CreatVid('videoMP4',"video/opening_en");
+	}else if(language=="gd"){
+		myjq("#opening_bg").attr('src','img/opening_gd_bg.jpg');
+		CreatVid('videoMP4',"video/opening_gd");
+	}
+	getID('videoMP4').onended = function(){	
+		clearVideo();
+		getId('Openingcont').style.display="block";
+	}
+	getID('videoMP4').onplay = function(){	
+		getId('Openingplay').style.display="none";
+	}
+}
+function onclickOpeningPlay(){
+	getId('videoMP4').play();
+	getId('Openingplay').style.display="none";
+}
+function gotoMain(obj){
+	language = obj;
+	if(language=="en"){
+		sub0 = sub0_en;
+		tocBtnBG_arr = tocBtnBG_arr1;
+		getId('toc_Menu_btn').innerHTML=toc1_Menu_btn_html;
+		myjq("#tocbtnbg2").attr('src','img/toc1.png');
+		myjq("#tocping").attr('src','img/ping.png');
+	}else if(language=="cn"){
+		sub0 = sub0_cn;
+		tocBtnBG_arr = tocBtnBG_arr2
+		getId('toc_Menu_btn').innerHTML=toc2_Menu_btn_html;
+		myjq("#tocbtnbg2").attr('src','img/toc3.png');
+		myjq("#tocping").attr('src','img/ping3.png');
+	}else if(language=="gd"){
+		sub0 = sub0_gd;
+		tocBtnBG_arr = tocBtnBG_arr2;
+		getId('toc_Menu_btn').innerHTML=toc2_Menu_btn_html;
+		myjq("#tocbtnbg2").attr('src','img/toc2.png');
+		myjq("#tocping").attr('src','img/ping2.png');
+		console.log(sub0);
+	}
+	afc("myContent","o",1);
+	document.getElementById("iframeLo").src = "";
+	getId('Openingcont').style.display="none";
+	clearVideo();
+	ContentInit();
+	//window.location.href="main.html";
+}
+</script>
+	</div>
+</body>
+</html>

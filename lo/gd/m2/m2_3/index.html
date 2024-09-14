@@ -1,0 +1,573 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>en Hotel Staff_m2_3</title>
+</head>
+<style>
+    @charset "utf-8";
+    /*全局初始化*/
+    
+    body,
+    div,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    img,
+    ol,
+    ul,
+    li,
+    dd,
+    dt,
+    dl,
+    input,
+    strong,
+    span,
+    button,
+    em {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    body {
+        font-size: 20px;
+        font-family: "微软雅黑";
+        color: #999;
+        overflow-x: hidden;
+    }
+    
+    ul,
+    ol {
+        list-style: none;
+    }
+    
+    img {
+        display: block;
+        position: absolute;
+    }
+    /*ie会有一个bug 的小缝隙*/
+    
+    a {
+        color: #fff;
+        text-decoration: none;
+        outline: none;
+        display: inline-block;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    button {
+        border: none;
+    }
+    /*媒体显示类*/
+    
+    #animate .full {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #animate .center {
+        width: 800px;
+        height: 404px;
+        left: 50%;
+        top: 50%;
+        margin-left: -400px;
+        margin-top: -236px;
+        border-radius: 5px;
+    }
+    
+    .btn {
+        cursor: pointer;
+    }
+    
+    .btn1 {
+        cursor: move;
+    }
+    
+    .num {
+        display: none;
+    }
+    
+    span {
+        position: absolute;
+        font-size: 24px;
+        color: #666666;
+    }
+    
+    .finger {
+        animation: myfirst infinite 0.5s;
+        -moz-animation: myfirst infinite 0.5s;
+        /* Firefox */
+        -webkit-animation: myfirst infinite 0.5s;
+        /* Safari and Chrome */
+        -o-animation: myfirst infinite 0.5s;
+        /* Opera */
+    }
+    
+    @keyframes myfirst {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-webkit-keyframes myfirst
+    /* Safari and Chrome */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-moz-keyframes myfirst
+    /* Firefox */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-o-keyframes myfirst
+    /* Opera */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    .finger0 {
+        animation: myfirst1 infinite 0.5s;
+        -moz-animation: myfirst1 infinite 0.5s;
+        /* Firefox */
+        -webkit-animation: myfirst1 infinite 0.5s;
+        /* Safari and Chrome */
+        -o-animation: myfirst1 infinite 0.5s;
+        /* Opera */
+    }
+    
+    @keyframes myfirst1 {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-webkit-keyframes myfirst1
+    /* Safari and Chrome */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-moz-keyframes myfirst1
+    /* Firefox */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-o-keyframes myfirst1
+    /* Opera */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+</style>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script src="../../js/pageResponse.js"></script>
+<script src="../../js/videof.js"></script>
+<script src="../../js/index.js"></script>
+<script src="../../js/IsPC.js"></script>
+<script src="js/drag.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.onload = window.onresize = function() {
+            pageResponse({
+                selectors: '#content', //模块选择器，使用querySelectorAll的方法
+                mode: 'contain', // auto || contain || cover ，默认模式为auto 
+                width: '1680', //输入页面的宽度，只支持输入数值，默认宽度为320px
+                height: '1050' //输入页面的高度，只支持输入数值，默认高度为504px
+            })
+        }
+        totalLoPage(2);
+        nowLoPage(1);
+        myVideo1();
+
+    });
+    
+</script>
+
+<body ondragstart="return false;" scroll="no">
+    <img src="../../img/white.png" style="position: absolute;"/>
+    <div id="content" style="position: absolute;">
+
+        <!-- <img src="../../img/videobigvpbtn.png" id="videoPause1" onclick="indexShow()" style="cursor: pointer;position: absolute; left: 720px;top: 420px;width: 257px; height: 257px;z-index: 1;">
+        <img src="img/m2bg1.png" id="m2bg1" alt=""/> -->
+
+        <div id="cont0" style="display: none;">
+            <img src="../../img/background.png" style="display: none;" id="background" alt=""/>
+            <img src="../../img/bgd.png" id="bgd" alt=""/>
+            <img src="../../img/titleR.png"  alt="" style="left: 1306.75px;top: 0.15px;" id="titleR"/>
+            <img src="../../img/m2TitleL.png"  alt="" style="left: 0px;top: 13.65px;" id="titleL1"/>
+        </div>
+        <div id="cont2" style="position: absolute;display: none;">
+            <img src="img/head2_2.png" alt="" style="left: 133.10px;top: 105px;" id="head2_2"/>
+            <img src="img/head3_1.png" alt="" style="left: 71.75px;top: 164.20px;" id="head3_1"/>
+            <img src="img/content1.png" alt="" style="left: -4.7px;top: 283.10px;" id="content1"/>
+            <img src="img/content2.png" alt="" style="left: 865.10px;top: 314.10px;" id="content2"/> 
+            <img src="img/answerbox1.png" alt="" style="left: 82.60px;top: 361.35px;z-index: 1;" id="answerbox1" /> 
+            <img src="img/box1_1.png" alt="" style="left: 884.10px;top: 358.30px;cursor: pointer;" id="a1" class="drag1"/>
+            <img src="img/box2_1.png" alt="" style="left: 1128.25px;top: 358.30px;cursor: pointer;" id="a2" class="drag1"/>
+            <img src="img/box3_1.png" alt="" style="left: 1369.80px;top: 358.30px;cursor: pointer;" id="a3" class="drag1"/>
+            <img src="img/box4_1.png" alt="" style="left: 884.10px;top: 540.85px;cursor: pointer;" id="a4" class="drag1"/>
+            <img src="img/box5_1.png" alt="" style="left: 1128.25px;top: 540.85px;cursor: pointer;" id="a5" class="drag1"/>
+            <img src="img/box6_1.png" alt="" style="left: 1369.80px;top: 540.85px;cursor: pointer;" id="a6" class="drag1"/>
+            <img src="img/box7_1.png" alt="" style="left: 884.10px;top: 722.55px;cursor: pointer;" id="a7" class="drag1"/>
+            <img src="img/box8_1.png" alt="" style="left: 1128.25px;top: 722.55px;cursor: pointer;" id="a8" class="drag1"/>
+            <img src="img/box9_1.png" alt="" style="left: 1369.80px;top: 722.55px;cursor: pointer;" id="a9" class="drag1"/>
+
+            <img src="img/box1_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box2_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box3_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box4_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box5_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box6_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box7_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box8_2.png" alt="" style="display: none;" class="drag2"/>
+            <img src="img/box9_2.png" alt="" style="display: none;" class="drag2"/>
+
+            <img src="../../img/submit.png" id="submit2" alt="" style="left: 1451.80px;top:900.40px;cursor: pointer;" onclick="submitBtn2()"/>
+            <img src="img/right2.png" alt="" style="left: -6px;top: 293.20px;display: none;" id="right2"/>
+            <img src="img/right3.png" alt="" style="left: -6px;top: 293.20px;display: none;" id="right3"/>
+            <img src="../../img/tryAgainBg.png" alt="" style="left: -6px;top: 394.00px;display: none;" id="tryAgainBg2"/>
+            <img src="../../img/continue.png" id="continue2" alt="" style="left: 1451.35px;top:900.40px;cursor: pointer;display: none;" onclick="continueBtn2()"/>
+            <img src="../../img/tryAgain.png" alt="" style="left: 1348.35px;top:900.40px;cursor: pointer;display: none;" id="againBtn2" onclick="againBtn2()"/>
+            <img src="../../img/Reset.png" alt="" style="left: 1050.35px;top:900.40px;cursor: pointer;" id="resetBtn2" onclick="resetBtn2()"/>
+        </div>
+        <audio id="myAudio" onclick="myAudioBtn()" style="position: absolute;left: 300px;"></audio>
+    </div>
+</body>
+<script>
+    var start = IsPC() ? "mousedown" : "touchstart";
+    var move = IsPC() ? "mousemove" : "touchmove";
+    var end = IsPC() ? "mouseup" : "touchend";
+    var flag = false;
+    var j = 0;
+
+    function indexShow(){
+        myVideo1();
+        $('#videoPause1').hide();
+        $('#m2bg1').fadeOut(200);
+    }
+    
+    var videoTestModel = true;
+    function myVideo1(){	
+        testVideo('content', 'videoMP4', 'video/m2_3.mp4', videoTestModel);
+        var myVideo = document.querySelector('#videoMP4');
+        //myVideo.controls = false;
+        $('#viodeContent').show();//页面
+        $('#videoMP4').show();//声音
+        myVideo.play();
+        myVideo.onended = function () {
+            setTimeout(function(){
+                $('#viodeContent').hide(); 
+                $('#viodeContent').remove();         
+                $('#videoMP4').remove(); 
+                readSomeThing('audio/topic1.mp3');
+                nowLoPage(2);
+                myAudio.onended = function(){
+                    readSomeThing('');
+                }
+            },1000);
+            $('#cont0').fadeIn(1500);
+            $('#cont2').fadeIn(1500);
+            myDrag();
+        }
+    }
+    //myDrag();
+	var submitNum=0;
+    function submitBtn2(){
+		 $('#answerbox1').css({ opacity: '0' });
+		if(submitNum<2){
+			submitNum++;
+			if (YourAns9.toString() == "1,1,0,1,1,1,1,1,0") {
+				$('#right2').show();
+				$('#continue2').show();
+				$('#submit2').hide();
+				$('#resetBtn2').hide();
+				readSomeThing('../../audio/Correct.mp3')
+				myAudio.onended = function(){
+					readSomeThing('');
+				}
+				//var num = document.querySelector('.drag1');
+				//console.log(num)	
+			}else if(timeNum>-1){
+				$('#tryAgainBg2').show();
+				$('#againBtn2').show();
+				$('#submit2').hide();
+				$('#resetBtn2').hide();
+				console.log("22")
+				readSomeThing('../../audio/again.mp3');
+				myAudio.onended = function(){
+					readSomeThing('');
+				}
+			}
+		}else{
+			$('#right3').show();
+			$('#continue2').show();
+			$('#submit2').hide();
+			$('#resetBtn2').hide();
+			readSomeThing('../../audio/InCorrect.mp3');
+			myAudio.onended = function(){
+					readSomeThing('');
+			}
+			
+		}
+		//document.querySelector('#resetBtn2').style.pointerEvents = 'none';
+		document.querySelector('#a1').style.pointerEvents = 'none';
+		document.querySelector('#a2').style.pointerEvents = 'none';
+		document.querySelector('#a3').style.pointerEvents = 'none';
+		document.querySelector('#a4').style.pointerEvents = 'none';
+		document.querySelector('#a5').style.pointerEvents = 'none';
+		document.querySelector('#a6').style.pointerEvents = 'none';
+		document.querySelector('#a7').style.pointerEvents = 'none';
+		document.querySelector('#a8').style.pointerEvents = 'none';
+		document.querySelector('#a9').style.pointerEvents = 'none';
+    }
+    function againBtn2(){
+        $('#againBtn2').hide();
+        $('#submit2').show();
+		$('#resetBtn2').show();
+        $('#tryAgainBg2').hide();
+        readSomeThing('');
+        YourAns9 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        console.log(YourAns9)
+        timeNum = -1;
+        $('#answerbox1').css({ opacity: '1' });
+        $('.drag2').css({ left: '2000px', top: '2000px', display: "none" });
+        $('#a1').css({ left: '884.10px', top: '358.30px', display: "block" });
+        $('#a2').css({ left: '1128.25px', top: '358.30px', display: "block" });
+        $('#a3').css({ left: '1369.80px', top: '358.30px', display: "block" });
+        $('#a4').css({ left: '884.10px', top: '540.85px', display: "block" });
+        $('#a5').css({ left: '1128.25px', top: '540.85px', display: "block" });
+        $('#a6').css({ left: '1369.80px', top: '540.85px', display: "block" });
+        $('#a7').css({ left: '884.10px', top: '722.55px', display: "block" });
+        $('#a8').css({ left: '1128.25px', top: '722.55px', display: "block" });
+        $('#a9').css({ left: '1369.805px', top: '722.55px', display: "block" });
+        document.querySelector('#a1').style.pointerEvents = 'auto';
+        document.querySelector('#a2').style.pointerEvents = 'auto';
+        document.querySelector('#a3').style.pointerEvents = 'auto';
+        document.querySelector('#a4').style.pointerEvents = 'auto';
+        document.querySelector('#a5').style.pointerEvents = 'auto';
+        document.querySelector('#a6').style.pointerEvents = 'auto';
+        document.querySelector('#a7').style.pointerEvents = 'auto';
+        document.querySelector('#a8').style.pointerEvents = 'auto';
+        document.querySelector('#a9').style.pointerEvents = 'auto';
+    }
+    function resetBtn2(){
+        if(timeNum>-1){
+            $('#againBtn2').hide();
+            $('#submit2').show();
+            $('#tryAgainBg2').hide();
+            readSomeThing('');
+            YourAns9 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+            console.log(YourAns9)
+            timeNum = -1;
+            $('#answerbox1').css({ opacity: '1' });
+            $('.drag2').css({ left: '2000px', top: '2000px', display: "none" });
+            $('#a1').css({ left: '884.10px', top: '358.30px', display: "block" });
+            $('#a2').css({ left: '1128.25px', top: '358.30px', display: "block" });
+            $('#a3').css({ left: '1369.80px', top: '358.30px', display: "block" });
+            $('#a4').css({ left: '884.10px', top: '540.85px', display: "block" });
+            $('#a5').css({ left: '1128.25px', top: '540.85px', display: "block" });
+            $('#a6').css({ left: '1369.80px', top: '540.85px', display: "block" });
+            $('#a7').css({ left: '884.10px', top: '722.55px', display: "block" });
+            $('#a8').css({ left: '1128.25px', top: '722.55px', display: "block" });
+            $('#a9').css({ left: '1369.805px', top: '722.55px', display: "block" });
+            document.querySelector('#a1').style.pointerEvents = 'auto';
+            document.querySelector('#a2').style.pointerEvents = 'auto';
+            document.querySelector('#a3').style.pointerEvents = 'auto';
+            document.querySelector('#a4').style.pointerEvents = 'auto';
+            document.querySelector('#a5').style.pointerEvents = 'auto';
+            document.querySelector('#a6').style.pointerEvents = 'auto';
+            document.querySelector('#a7').style.pointerEvents = 'auto';
+            document.querySelector('#a8').style.pointerEvents = 'auto';
+        }
+        
+    }
+    function continueBtn2(){
+        readSomeThing('');
+        setMyCompleted();
+        $("#cont0").remove();
+        $("#cont2").remove();
+    }
+    function myDrag() {
+        drag = new Drag9($('.drag1'), [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]);
+        drag.dragFun();
+    }
+    function readSomeThing(url) {
+        //myAudio.controls = true;
+		document.body.appendChild(myAudio);
+        myAudio.pause();
+        myAudio.src = url;
+        myAudio.load();
+        myAudio.play();
+    }
+    function videoPauseBtn(){
+        $('#videoPause').show();
+        videoMP4.pause();
+    }
+    function myvideoPlay(){
+        var videoMP4 = document.querySelector('#videoMP4');
+        videoMP4.play();
+        $('#videoPause').hide();
+    }
+    function videoBtn(){
+        if(videoMP4.paused){
+            videoMP4.play();
+        }else{
+            videoMP4.pause();
+        }
+    }
+    function videoPlay(){
+        var videoMP4 = document.querySelector('#videoMP4');
+        var myAudio = document.querySelector('#myAudio');
+        if(videoMP4){
+            videoMP4.play();
+        }
+        if(myAudio){
+            myAudio.play();
+        }
+    }
+    function videoPause(){
+        var videoMP4 = document.querySelector('#videoMP4');
+        var myAudio = document.querySelector('#myAudio');
+        if(videoMP4){
+            videoMP4.pause();
+        }
+        if(myAudio){
+            myAudio.pause();
+        }
+    }
+    var sub0Status
+    window.addEventListener("message", messageHandler, true);
+    function messageHandler(e) {
+        var dataStr = e.data;
+            var list = dataStr.split("#");
+
+            if (list[0] == "getAllSubStatus") {
+                sub0Status  =list[1].split("");
+                console.log("111111111111111111==="+sub0Status);
+            } else if (list[0] == "lovideoMP4play") {
+                console.log("lovideoMP4play");
+                videoBtn();
+            }else if (list[0] == "videoPlay") {
+                videoPlay();
+            }else if (list[0] == "videoPause") {
+                videoPause();
+            }
+    }
+    function getAllSubStatus(num) {
+        console.log('getAllSubStatus');
+        window.parent.postMessage("getAllSubStatus#" + num, "*");
+    }
+    function getObj(obj) {
+        return document.getElementById(obj);
+    }
+    var s = 0;
+    function myFunction() {
+        $('#videoMP4').remove();
+        setMyCompleted();
+    }
+
+    function setMyCompleted(obj) {
+        window.parent.postMessage("setCompleted#" + obj, "*");
+    }
+
+    function totalLoPage(num) {
+        window.parent.postMessage("totalPage#" + num, "*");
+    }
+
+    function nowLoPage(num) {
+        window.parent.postMessage("nowPage#" + num, "*");
+    }
+    function setMyVideoState(str){
+        //window.parent.postMessage("setVideoState#"+str,"*");
+    }
+    function fingerShow(num){
+        window.parent.postMessage("fingerShow#"+num,"*");
+    }
+    function unNav(str){
+        window.parent.postMessage("unNav#"+str,"*");
+    }
+    function tabToggle(str){
+        window.parent.postMessage("tabToggle#"+str,"*");
+    }
+    function updateMyPercent(str){
+        //window.parent.postMessage("updatePercent#"+str,"*");
+    }
+</script>
+</html>

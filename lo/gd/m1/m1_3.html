@@ -1,0 +1,252 @@
+﻿<!DOCTYPE HTML>
+<html full>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" href="js/animate.min.css">
+		<title>m1</title>
+		<style type="text/css">
+			*{ margin:0; padding:0}
+			img {display:block; position:absolute;}
+			ul,dl,ol{ list-style:none}
+			html, body{ width:100%; height:100%;}
+			[full]{ width: 100%; height:100%; overflow:hidden}
+			.toBig:hover{
+				transform: scale(1.1,1.1);
+				-ms-transform: scale(1.1,1.1);
+				-webkit-transform: scale(1.1,1.1);
+				-o-transform: scale(1.1,1.1);
+				-moz-transform: scale(1.1,1.1);
+			}
+			.cliBig{
+				transform: scale(1.1,1.1);
+				-ms-transform: scale(1.1,1.1);
+				-webkit-transform: scale(1.1,1.1);
+				-o-transform: scale(1.1,1.1);
+				-moz-transform: scale(1.1,1.1);
+			}
+			img{
+				position: absolute;
+				display: block;
+			}
+		@keyframes finger{
+			0%{ transform:scale(0.8); opacity:0.8}
+			50%{ transform:scale(1); opacity:1}
+			100%{ transform:scale(0.8); opacity:0.8}
+		}
+		@-webkit-keyframes finger{
+			0%{ transform:scale(0.8); opacity:0.8}
+			50%{ transform:scale(1); opacity:1}
+			100%{ transform:scale(0.8); opacity:0.8}
+		}
+		@-moz-keyframes finger{
+			0%{ transform:scale(0.8); opacity:0.8}
+			50%{ transform:scale(1); opacity:1}
+			100%{ transform:scale(0.8); opacity:0.8}
+		}
+		@-o-keyframes finger{
+			0%{ transform:scale(0.8); opacity:0.8}
+			50%{ transform:scale(1); opacity:1}
+			100%{ transform:scale(0.8); opacity:0.8}
+		}
+		.finger{
+			cursor:pointer;
+		    animation: finger 0.5s ease-in-out infinite; 
+		    -moz-animation: finger 0.5s ease-in-out infinite; 
+		    -o-animation: finger 0.5s ease-in-out infinite; 
+		    -webkit-animation: finger 0.5s ease-in-out infinite;
+		    -webkit-transform: translate3d(0,0,0);
+			-moz-transform: translate3d(0,0,0);
+			-ms-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+		}
+		</style>
+		<script src="js/jquery-2.1.1.min.js"></script>
+        <script src="js/APIWrapper.js"></script>
+        <script src="js/common.js"></script>
+        <script src="js/MobileAPI.js"></script>
+		<script type="text/javascript" language="javascript">
+		window.jQuery = window.myjq = jQuery;
+		var audioabtnclick=new Audio();
+		var start = IsPC() ? "mousedown" : "touchstart";
+		var move = IsPC() ? "mousemove" : "touchmove";
+		var end = IsPC() ? "mouseup" : "touchend";
+		//
+		var sub0Status
+		window.addEventListener("message", messageHandler, true);
+		function messageHandler(e) {
+			var dataStr = e.data;
+				var list = dataStr.split("#");
+	
+				if (list[0] == "getAllSubStatus") {
+					sub0Status  =list[1].split("");
+				} else if (list[0] == "lovideoMP4play") {
+
+				}else if (list[0] == "videoPlay") {
+						if(videoMP4)videoMP4.play();
+				}else if (list[0] == "videoPause") {
+					if(videoMP4)videoMP4.pause();
+				}
+		}
+		var myAudio=new Audio();
+		function playsound(url)
+		{
+			myAudio.src=url;
+			myAudio.play();
+		}
+		function setMyCompleted(obj){
+			window.parent.postMessage("setCompleted#"+obj,"*");
+		}
+		function totalLoPage(num){
+			window.parent.postMessage("totalPage#"+num,"*");
+		}
+		function nowLoPage(num){
+			window.parent.postMessage("nowPage#"+num,"*");
+		}
+		function setMyVideoState(str){
+			//window.parent.postMessage("setVideoState#"+str,"*");
+		}
+		function fingerShow(num){
+			window.parent.postMessage("fingerShow#"+num,"*");
+		}
+		function unNav(str){
+			window.parent.postMessage("unNav#"+str,"*");
+		}
+		function tabToggle(str){
+			window.parent.postMessage("tabToggle#"+str,"*");
+		}
+		function updateMyPercent(str){
+			//window.parent.postMessage("updatePercent#"+str,"*");
+		}
+window.onload = function(){
+	totalLoPage(5)
+	nowLoPage(1);
+	CreatVid('videoMP4',"video/m1_3_1");
+	timeUp([0,48,69],1);
+	getID('videoMP4').onended = function(){	
+		clearVideo();
+		$("#cont").show();
+	}
+	$('#play').click(function(event) {
+		$('#videoMP4').trigger('play');
+		$(this).hide();
+	});
+}
+function fn1(){
+	setMyCompleted();
+}
+function BtnonClick(obj){
+	
+	if(myjq(".C1").eq(obj-1).css('opacity')==0){
+		myjq(".C1").eq(obj-1).css('opacity',1);
+		}else{myjq(".C1").eq(obj-1).css('opacity',0);}
+	
+}
+var TextNum=0;
+function BtnSubmit(){
+	TextNum++;
+	if(judgeFun()){
+		$("#continue").show();
+		playsound("../audio/Correct.mp3");
+	}else{
+		if(TextNum<3){
+		     $("#again").show();
+		     playsound("audio/Incorrect.mp3");
+		}else{
+			$("#again2").show();
+			/*for(var i=0;i<7;i++){
+			     myjq(".C1").eq(i).css('opacity',1);
+			}*/
+			playsound("audio/Slide3_Incorrect.mp3");
+		}
+	}
+}
+function judgeFun(){
+	for(var i=0;i<7;i++){
+		if(myjq(".C1").eq(i).css('opacity')==0){
+			return false;
+		}
+	}
+	return true;
+}
+
+function Btnagain(){
+	myAudio.pause();
+	for(var i=0;i<7;i++){
+		myjq(".C1").eq(i).css('opacity',0);
+	}
+	$("#again").hide();
+}
+function Btncontinue(){
+	myAudio.pause();
+	$("#cont").hide();
+	nowLoPage(4);
+	CreatVid('videoMP4',"video/m1_3_2");
+	getID('videoMP4').onended = function(){	
+	    nowLoPage(5);
+		$("#cont2").show();
+		setTimeout(function(){
+            fn1();
+        },3000)
+	}
+	$('#play').click(function(event) {
+		$('#videoMP4').trigger('play');
+		$(this).hide();
+	});
+}
+//index=$(B1).index($(this));
+</script>
+	</head>
+
+	<body style="position:absolute; background:#FFFFFF;overflow:hidden;">
+		<div id="content" full>
+			<!--end-->
+			<!--<div id="VIDEO" full></div>-->
+            <img src="../1.gif" style="left: 0px; top: 0px; z-index: -1">
+			<img src="../play.png" style="left: 800px; top:485px; width: 80px; height: 80px; cursor: pointer; z-index: 99; display: none;" id="play">
+            <div id="VIDEO" full style="background:#FFFFFF no-repeat;background-size:558px 35px;background-position:center;"></div>
+			<div id="cont" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px; display: none;">
+                  <img src="m1_3/m1_3bg.jpg" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px;"  alt=""/> 
+                  
+                  <img src="m1_3/m1_3.png" style="position: absolute;left:561.25px; top: 412.45px; width: 95px; height: 81px; opacity:0;"alt="" class="C1"/>
+                  <img src="m1_3/m1_3.png" style="position: absolute;left:889.35px; top: 412.45px; width: 95px; height: 81px; opacity:0;"alt="" class="C1"/>
+                  <img src="m1_3/m1_3.png" style="position: absolute;left:1213.8px; top: 412.45px; width: 95px; height: 81px; opacity:0;"alt="" class="C1"/>
+                  <img src="m1_3/m1_3.png" style="position: absolute;left:405.2px; top: 666.5px; width: 95px; height: 81px; opacity:0;"alt="" class="C1"/>
+                  <img src="m1_3/m1_3.png" style="position: absolute;left:727.25px; top: 666.5px; width: 95px; height: 81px; opacity:0;"alt="" class="C1"/>
+                  <img src="m1_3/m1_3.png" style="position: absolute;left:1046.6px; top: 666.5px; width: 95px; height: 81px; opacity:0;"alt="" class="C1"/>
+                  <img src="m1_3/m1_3.png" style="position: absolute;left:1387.65px; top: 666.5px; width: 95px; height: 81px; opacity:0;"alt="" class="C1"/>
+
+
+                  <img src="m1_3/m1_3_btn.png" style="position: absolute;left:362.4px; top: 274.55px; width: 269px; height: 313px; cursor:pointer;" onClick="BtnonClick(1)" alt=""/>
+                  <img src="m1_3/m1_3_btn.png" style="position: absolute;left:677.45px; top: 274.55px; width: 269px; height: 313px; cursor:pointer;" onClick="BtnonClick(2)" alt=""/>
+                  <img src="m1_3/m1_3_btn.png" style="position: absolute;left:1003.35px; top: 274.55px; width: 269px; height: 313px; cursor:pointer;" onClick="BtnonClick(3)" alt=""/>
+                  <img src="m1_3/m1_3_btn.png" style="position: absolute;left:207.95px; top: 528.85px; width: 269px; height: 313px; cursor:pointer;" onClick="BtnonClick(4)" alt=""/>
+                  <img src="m1_3/m1_3_btn.png" style="position: absolute;left:522.6px; top: 528.85px; width: 269px; height: 313px; cursor:pointer;" onClick="BtnonClick(5)" alt=""/>
+                  <img src="m1_3/m1_3_btn.png" style="position: absolute;left:839.65px; top: 528.85px; width: 269px; height: 313px; cursor:pointer;" onClick="BtnonClick(6)" alt=""/>
+                  <img src="m1_3/m1_3_btn.png" style="position: absolute;left:1167.05px; top: 528.85px; width: 269px; height: 313px; cursor:pointer;" onClick="BtnonClick(7)" alt=""/>
+                  <img src="m1_3/m1_3_Submit_btn.png" style="position: absolute;left:1438.3px; top: 829.35px; width: 210px; height: 76px; cursor:pointer;" onClick="BtnSubmit();" alt=""/>                  
+              <div id="continue" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px; display: none;">
+                  <img src="m1_3/m1_3a.png" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px;"  alt=""/>
+                  <img src="m1_3/m1_3_continue_btn.png" style="position: absolute;left:1438.3px; top: 829.35px; width: 210px; height: 76px; cursor:pointer;" onClick="Btncontinue();" alt=""/>                  
+              </div>
+              <div id="again" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px; display: none;">
+                  <img src="m1_3/m1_3b.png" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px;"  alt=""/> 
+                  <img src="m1_3/m1_3_again_btn.png" style="position: absolute;left:1438.3px; top: 829.35px; width: 210px; height: 76px; cursor:pointer;" onClick="Btnagain();"  alt=""/>
+              </div>
+              <div id="again2" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px; display: none;">
+                  <img src="m1_3/m1_3c.png" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px;"  alt=""/> 
+                  <img src="m1_3/m1_3_continue_btn.png" style="position: absolute;left:1438.3px; top: 829.35px; width: 210px; height: 76px; cursor:pointer;" onClick="Btncontinue();"  alt=""/>
+              </div>
+            <div id="cont2" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px; display: none;">
+            <img src="images/m1-3.jpg" style="position: absolute;left: 0px; top: 0px; width: 1680px; height: 1050px;"  alt=""/>
+            </div>
+            
+            
+            </div>
+		</div>
+	</body>
+</html>

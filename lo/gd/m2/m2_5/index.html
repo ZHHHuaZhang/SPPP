@@ -1,0 +1,722 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>en Hotel Staff_m2_5</title>
+</head>
+<style>
+    @charset "utf-8";
+    /*全局初始化*/
+    
+    body,
+    div,
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    img,
+    ol,
+    ul,
+    li,
+    dd,
+    dt,
+    dl,
+    input,
+    strong,
+    span,
+    button,
+    em {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-weight: normal;
+        font-style: normal;
+    }
+    
+    body {
+        font-size: 20px;
+        font-family: "微软雅黑";
+        color: #999;
+        overflow-x: hidden;
+    }
+    
+    ul,
+    ol {
+        list-style: none;
+    }
+    
+    img {
+        display: block;
+        position: absolute;
+    }
+    /*ie会有一个bug 的小缝隙*/
+    
+    a {
+        color: #fff;
+        text-decoration: none;
+        outline: none;
+        display: inline-block;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    button {
+        border: none;
+    }
+    /*媒体显示类*/
+    
+    #animate .full {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #animate .center {
+        width: 800px;
+        height: 404px;
+        left: 50%;
+        top: 50%;
+        margin-left: -400px;
+        margin-top: -236px;
+        border-radius: 5px;
+    }
+    
+    .btn {
+        cursor: pointer;
+    }
+    
+    .btn1 {
+        cursor: move;
+    }
+    
+    .num {
+        display: none;
+    }
+    
+    span {
+        position: absolute;
+        font-size: 24px;
+        color: #666666;
+    }
+    
+    .finger {
+        animation: myfirst infinite 0.5s;
+        -moz-animation: myfirst infinite 0.5s;
+        /* Firefox */
+        -webkit-animation: myfirst infinite 0.5s;
+        /* Safari and Chrome */
+        -o-animation: myfirst infinite 0.5s;
+        /* Opera */
+    }
+    
+    @keyframes myfirst {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-webkit-keyframes myfirst
+    /* Safari and Chrome */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-moz-keyframes myfirst
+    /* Firefox */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    @-o-keyframes myfirst
+    /* Opera */
+    
+    {
+        0% {
+            top: 236.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 236.7px;
+        }
+    }
+    
+    .finger0 {
+        animation: myfirst1 infinite 0.5s;
+        -moz-animation: myfirst1 infinite 0.5s;
+        /* Firefox */
+        -webkit-animation: myfirst1 infinite 0.5s;
+        /* Safari and Chrome */
+        -o-animation: myfirst1 infinite 0.5s;
+        /* Opera */
+    }
+    
+    @keyframes myfirst1 {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-webkit-keyframes myfirst1
+    /* Safari and Chrome */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-moz-keyframes myfirst1
+    /* Firefox */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+    
+    @-o-keyframes myfirst1
+    /* Opera */
+    
+    {
+        0% {
+            top: 208.7px;
+        }
+        50% {
+            top: 220.7px;
+        }
+        100% {
+            top: 208.7px;
+        }
+    }
+</style>
+<script src="../../js/jquery-2.1.1.min.js"></script>
+<script src="../../js/pageResponse.js"></script>
+<script src="../../js/videof.js"></script>
+<script src="../../js/index.js"></script>
+<script src="../../js/IsPC.js"></script>
+<!-- <script src="js/drag.js"></script> -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        window.onload = window.onresize = function() {
+            pageResponse({
+                selectors: '#content', //模块选择器，使用querySelectorAll的方法
+                mode: 'contain', // auto || contain || cover ，默认模式为auto 
+                width: '1680', //输入页面的宽度，只支持输入数值，默认宽度为320px
+                height: '1050' //输入页面的高度，只支持输入数值，默认高度为504px
+            })
+        }
+        totalLoPage(3);
+        nowLoPage(1);
+        myVideo1();
+        createCont(1,cheekX=962,cheekY=315,questionX=82,questionY=191,questionNum=3,optionX=91,[332,437,571],3,isend=true,wrongF=1);
+        document.getElementById("tryAgainBg1").style.top="398px";
+    });
+        function selectBtn1(){
+        flag = true;
+        j = 0;
+        $('#select1').attr('src','img/select1_2.png');
+        $('#select2').attr('src','img/select2_1.png');
+        $('#select3').attr('src','img/select3_1.png');
+    }
+    function selectBtn2(){
+        j = 1;
+        flag = true;
+        $('#select1').attr('src','img/select1_1.png');
+        $('#select2').attr('src','img/select2_2.png');
+        $('#select3').attr('src','img/select3_1.png');
+    }
+    function selectBtn3(){
+        j = 0;
+        flag = true;
+        $('#select1').attr('src','img/select1_1.png');
+        $('#select2').attr('src','img/select2_1.png');
+        $('#select3').attr('src','img/select3_2.png');
+    }
+    function submitBtn1_1(){
+        if(flag){
+            document.querySelector('#select2').style.pointerEvents = 'none';
+            document.querySelector('#select1').style.pointerEvents = 'none';
+            document.querySelector('#select3').style.pointerEvents = 'none';
+            if(j == 1){
+                $('#right1').show();
+                $('#continue1').show();
+                $('#submit1').hide();
+                readSomeThing('../../audio/Correct.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('');
+                }
+                j = 0;
+            }else{
+                $('#tryAgainBg1').show();
+                $('#againBtn1').show();
+                $('#submit1').hide();
+                readSomeThing('../../audio/again.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('');
+                }
+            }
+        }
+        flag = false;
+        console.log(flag + j)
+    }
+    function againBtn1_1(){
+        $('#againBtn1').hide();
+        $('#submit1').show();
+        $('#tryAgainBg1').hide();
+        readSomeThing('');
+        $('#select1').attr('src','img/select1_1.png');
+        $('#select2').attr('src','img/select2_1.png');
+        $('#select3').attr('src','img/select3_1.png');
+        document.querySelector('#select1').style.pointerEvents = 'auto';
+        document.querySelector('#select2').style.pointerEvents = 'auto';
+        document.querySelector('#select3').style.pointerEvents = 'auto';
+    }
+    function continueBtn1_1(){
+        readSomeThing('audio/topic1.mp3');
+        // setMyCompleted();
+        // $("#cont0").remove();
+        // $("#cont1").fadeIn();
+        $("#cont1_1").remove();
+        $('#cont1').fadeIn(1500);
+        setTimeout(function(){
+            $('#cheek1').fadeIn(3000);
+        },600);
+    }
+    function nextLOfun(){
+		 setMyCompleted();
+	}
+    function nextLOfun(){
+		 setMyCompleted();
+	}
+</script>
+
+<body ondragstart="return false;" scroll="no">
+    <img src="../../img/white.png" style="position: absolute;"/>
+    <div id="content" style="position: absolute;">
+
+        <!-- <img src="../../img/videobigvpbtn.png" id="videoPause1" onclick="indexShow()" style="cursor: pointer;position: absolute; left: 720px;top: 420px;width: 257px; height: 257px;z-index: 1;">
+         -->
+        <img src="img/m2bg1.png" style="display: none;"  alt=""  id="m2bg1"/>
+        <img src="img/m2bg5.jpg" style="display: none;"  alt=""  id="m2bg5"/>
+        <img src="../../img/nextLO.png" id="nextLO_btn" style="display: none;left: 1168.95px;top: 868.65px;cursor:pointer;"  alt="" onclick="nextLOfun()"/>
+        <div id="cont0" style="position: absolute;display: none;">
+            <img src="../../img/background.png"  id="background" alt=""/>
+            <img src="../../img/bgd.png" id="bgd" alt=""/>
+            <img src="../../img/titleR.png"  alt="" style="left: 1306.75px;top: 0.15px;" id="titleR"/>
+            <img src="../../img/titleL.png"  alt="" style="left: 133.10px;top: 105px;" id="titleL"/>
+            <img src="../../img/m2TitleL.png"  alt="" style="left: 0px;top: 13.65px;" id="titleL1"/>
+        </div>
+
+        <div id="cont1_1" style="position: absolute;display: none;">
+            <img src="img/cheek1_1.png" alt="" style="left: 878px;top: 327.90px;display: none;" id="cheek1_1"/>
+            <img src="img/question1_1.png" alt="" style="left: 82px;top: 191.45px;" id="question1"/>
+            <img src="img/head2_1.png" alt="" style="left: 133.10px;top: 105px;" id="head2_1"/>
+            <img src="img/select1_1.png" alt="" style="left: 91.85px;top: 332.95px;cursor: pointer;" id="select1" onclick="selectBtn1()"/>
+            <img src="img/select2_1.png" alt="" style="left: 91.85px;top: 463.10px;cursor: pointer;" id="select2" onclick="selectBtn2()"/>
+            <img src="img/select3_1.png" alt="" style="left: 91.85px;top: 593.25px;cursor: pointer;" id="select3" onclick="selectBtn3()"/>
+            <img src="../../img/submit.png" id="submit1" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;" onclick="submitBtn1_1()"/>
+            <img src="img/right1_1.png" alt="" style="left: -6px;top: 207.50px;display: none;" id="right1"/>
+            <img src="../../img/tryAgainBg.png" alt="" style="left: -6px;top: 398.10px;display: none;" id="tryAgainBg1"/>
+            <img src="../../img/continue.png" id="continue1" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;display: none;" onclick="continueBtn1_1()"/>
+            <img src="../../img/tryAgain.png" alt="" style="left: 1348.35px;top:849.40px;cursor: pointer;display: none;" id="againBtn1" onclick="againBtn1_1()"/>
+        </div>
+
+        <!-- <div id="cont3" style="position: absolute;display: none;">
+            <img src="img/cheek3.png" alt="" style="left: 623.80px;top: 307.60px;display: none;" id="cheek3"/>
+            <img src="img/question3.png" alt="" style="left: 82px;top: 191.45px;" id="question3"/>
+            <img src="img/opt1_1.png" alt="" style="left: 91.85px;top: 332.95px;cursor: pointer;" id="opt1" onclick="optBtn1()"/>
+            <img src="img/opt2_1.png" alt="" style="left: 91.85px;top: 437.10px;cursor: pointer;" id="opt2" onclick="optBtn2()"/>
+            <img src="img/opt3_1.png" alt="" style="left: 91.85px;top: 531.25px;cursor: pointer;" id="opt3" onclick="optBtn3()"/>
+            <img src="img/opt4_1.png" alt="" style="left: 91.85px;top: 631.25px;cursor: pointer;" id="opt4" onclick="optBtn4()"/>
+            <img src="../../img/submit.png" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;" id="submit3" onclick="submitBtn3()"/>
+            <img src="img/right3.png" alt="" style="left: -6px;top: 334px;display: none;" id="right3"/>
+            <img src="../../img/tryAgainBg.png" alt="" style="left: -6px;top: 398.10px;display: none;" id="tryAgainBg3"/>
+            <img src="../../img/continue.png" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;display: none;" id="continue3" onclick="continueBtn3()"/>
+            <img src="../../img/tryAgain.png" alt="" style="left: 1348.35px;top:849.40px;cursor: pointer;display: none;" id="againBtn3" onclick="againBtn3()"/>
+        </div>
+        <div id="cont4" style="position: absolute;display: none;">
+            <img src="img/cheek4.png" alt="" style="left: 1074.60px;top: 336.20px;display: none;" id="cheek4"/>
+            <img src="img/question4.png" alt="" style="left: 82px;top: 191.45px;" id="question4"/>
+            <img src="img/choose1_1.png" alt="" style="left: 91.20px;top: 392.95px;cursor: pointer;" id="choose1" onclick="chooseBtn1()"/>
+            <img src="img/choose2_1.png" alt="" style="left: 91.85px;top: 577.10px;cursor: pointer;" id="choose2" onclick="chooseBtn2()"/>
+            <img src="img/choose3_1.png" alt="" style="left: 91.85px;top: 751.25px;cursor: pointer;" id="choose3" onclick="chooseBtn3()"/>
+            <img src="../../img/submit.png" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;" id="submit4" onclick="submitBtn4()"/>
+            <img src="img/right3.png" alt="" style="left: -6px;top: 235.85px;display: none;" id="right4"/>
+            <img src="../../img/tryAgainBg.png" alt="" style="left: -6px;top: 398.10px;display: none;" id="tryAgainBg4"/>
+            <img src="../../img/continue.png" alt="" style="left: 1451.80px;top:849.40px;cursor: pointer;display: none;" id="continue4" onclick="continueBtn4()"/>
+            <img src="../../img/tryAgain.png" alt="" style="left: 1348.35px;top:849.40px;cursor: pointer;display: none;" id="againBtn4" onclick="againBtn4()"/>
+        </div> -->
+
+
+        <audio id="myAudio" onclick="myAudioBtn()" style="position: absolute;left: 300px;"></audio>
+    </div>
+</body>
+<script>
+    var start = IsPC() ? "mousedown" : "touchstart";
+    var move = IsPC() ? "mousemove" : "touchmove";
+    var end = IsPC() ? "mouseup" : "touchend";
+    var flag = false;
+    var j = 0;
+    
+    function indexShow(){
+        myVideo1();
+        setTimeout(function(){
+            $('#videoPause1').hide();
+            $('#m2bg1').hide();
+        },200);
+    }
+    
+    var videoTestModel = true;
+    function myVideo1(){	
+        testVideo('content', 'videoMP4', 'video/m2_5.mp4', videoTestModel);
+        var myVideo = document.querySelector('#videoMP4');
+        //myVideo.controls = false;
+        $('#viodeContent').show();//页面
+        $('#videoMP4').show();//声音
+        myVideo.play();
+        videoMP4.addEventListener("timeupdate",videoStart,false);
+        function videoStart(){
+            //timeDisplay = Math.floor(videoMP4.currentTime);
+            timeDisplay = videoMP4.currentTime;
+            timeTotal = videoMP4.duration;
+            var percent  = timeDisplay/timeTotal;
+            if(timeDisplay > 0.5 && timeDisplay < 1){
+                readSomeThing('audio/Assessment.mp3');
+            }
+        }
+        myAudio.onended = function () {
+            nowLoPage(1);
+            setTimeout(function(){
+                $('#viodeContent').hide(); 
+                $('#viodeContent').remove();         
+                $('#videoMP4').remove(); 
+                $('#m2bg1').hide();
+                readSomeThing('audio/topic1_1.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('')
+                };
+            },1000);
+            $('#cont0').fadeIn(1500);
+            $('#cont1_1').fadeIn(1500);
+            setTimeout(function(){
+            $('#cheek1_1').fadeIn(3000);
+            },600);
+            $('#bgd').hide();
+        }
+        myVideo.onended = function(){
+            $('#m2bg1').show();
+            $('#viodeContent').hide(); 
+            $('#viodeContent').hide();         
+            $('#videoMP4').hide(); 
+            myVideo.src = '';
+        }
+    }
+    function optBtn1(){
+        flag = true;
+        j = 0;
+        $('#opt1').attr('src','img/opt1_2.png');
+        $('#opt2').attr('src','img/opt2_1.png');
+        $('#opt3').attr('src','img/opt3_1.png');
+        $('#opt4').attr('src','img/opt4_1.png');
+    }
+    function optBtn2(){
+        flag = true;
+        j = 0;
+        $('#opt1').attr('src','img/opt1_1.png');
+        $('#opt2').attr('src','img/opt2_2.png');
+        $('#opt3').attr('src','img/opt3_1.png');
+        $('#opt4').attr('src','img/opt4_1.png');
+    }
+    function optBtn3(){
+        flag = true;
+        j = 1;
+        $('#opt1').attr('src','img/opt1_1.png');
+        $('#opt2').attr('src','img/opt2_1.png');
+        $('#opt3').attr('src','img/opt3_2.png');
+        $('#opt4').attr('src','img/opt4_1.png');
+    }
+    function optBtn4(){
+        flag = true;
+        j = 0;
+        $('#opt1').attr('src','img/opt1_1.png');
+        $('#opt2').attr('src','img/opt2_1.png');
+        $('#opt3').attr('src','img/opt3_1.png');
+        $('#opt4').attr('src','img/opt4_2.png');
+    }
+    
+    function submitBtn3(){
+        if(flag){
+            document.querySelector('#opt1').style.pointerEvents = 'none';
+            document.querySelector('#opt2').style.pointerEvents = 'none';
+            document.querySelector('#opt3').style.pointerEvents = 'none';
+            document.querySelector('#opt4').style.pointerEvents = 'none';
+            if(j == 1){
+                $('#right3').show();
+                $('#continue3').show();
+                $('#submit3').hide();
+                readSomeThing('../../audio/Correct.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('')
+                };
+                j = 0;
+            }else{
+                $('#tryAgainBg3').show();
+                $('#againBtn3').show();
+                $('#submit3').hide();
+                readSomeThing('../../audio/again.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('')
+                };
+            }
+        }
+        flag = false;
+        console.log(flag)
+        console.log(j)
+    }
+    function againBtn3(){
+        $('#tryAgainBg3').hide();
+        $('#againBtn3').hide();
+        $('#submit3').show();
+        readSomeThing('');
+        $('#opt1').attr('src','img/opt1_1.png');
+        $('#opt2').attr('src','img/opt2_1.png');
+        $('#opt3').attr('src','img/opt3_1.png');
+        $('#opt4').attr('src','img/opt4_1.png');
+        document.querySelector('#opt1').style.pointerEvents = 'auto';
+        document.querySelector('#opt2').style.pointerEvents = 'auto';
+        document.querySelector('#opt3').style.pointerEvents = 'auto';
+        document.querySelector('#opt4').style.pointerEvents = 'auto';
+    }
+    function continueBtn3(){
+        nowLoPage(2);
+        $("#cont1").remove();
+        readSomeThing('');
+        setTimeout(function(){
+            readSomeThing('audio/topic2.mp3');
+            myAudio.onended = function(){
+                    readSomeThing('')
+            };
+        },1000);
+        $("#cont4").fadeIn(1500);
+        setTimeout(function(){
+            $('#cheek4').fadeIn(3000);
+        },600);
+    }
+    function chooseBtn1(){
+        flag = true;
+        j = 0;
+        $('#choose1').attr('src','img/choose1_2.png');
+        $('#choose2').attr('src','img/choose2_1.png');
+        $('#choose3').attr('src','img/choose3_1.png');
+    }
+    function chooseBtn2(){
+        flag = true;
+        j = 0;
+        $('#choose1').attr('src','img/choose1_1.png');
+        $('#choose2').attr('src','img/choose2_2.png');
+        $('#choose3').attr('src','img/choose3_1.png');
+    }
+    function chooseBtn3(){
+        flag = true;
+        j = 1;
+        $('#choose1').attr('src','img/choose1_1.png');
+        $('#choose2').attr('src','img/choose2_1.png');
+        $('#choose3').attr('src','img/choose3_2.png');
+    }
+
+    function submitBtn4(){
+        if(flag){
+            document.querySelector('#choose1').style.pointerEvents = 'none'; 
+            document.querySelector('#choose2').style.pointerEvents = 'none'; 
+            document.querySelector('#choose3').style.pointerEvents = 'none'; 
+            if(j == 1){
+                $('#right4').show();
+                $('#continue4').show();
+                $('#submit4').hide();
+                readSomeThing('../../audio/Correct.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('')
+                };
+                j = 0;
+            }else{
+                $('#tryAgainBg4').show();
+                $('#againBtn4').show();
+                $('#submit4').hide();
+                readSomeThing('../../audio/again.mp3');
+                myAudio.onended = function(){
+                    readSomeThing('')
+                };
+            }
+        }
+        flag = false;
+        console.log(flag)
+        console.log(j)
+    }
+    function againBtn4(){
+        $('#tryAgainBg4').hide();
+        $('#againBtn4').hide();
+        $('#submit4').show();
+        readSomeThing('');
+        $('#choose1').attr('src','img/choose1_1.png');
+        $('#choose2').attr('src','img/choose2_1.png');
+        $('#choose3').attr('src','img/choose3_1.png');
+        document.querySelector('#choose1').style.pointerEvents = 'auto'; 
+        document.querySelector('#choose2').style.pointerEvents = 'auto'; 
+        document.querySelector('#choose3').style.pointerEvents = 'auto'; 
+    }
+    function continueBtn4(){
+        nowLoPage(3);
+        $("#cont0").remove();
+        $("#cont4").remove();
+        readSomeThing('');
+        myVideo2();
+    }
+    function myVideo2(){	
+        testVideo('content', 'videoMP4', 'video/m2_6.mp4', videoTestModel);
+        var myVideo = document.querySelector('#videoMP4');
+        //myVideo.controls = false;
+        $('#viodeContent').show();//页面
+        $('#videoMP4').show();//声音
+        myVideo.play();
+        myVideo.onended = function () {
+            nowLoPage(4);
+            setTimeout(function(){
+                $('#viodeContent').hide(); 
+                $('#viodeContent').remove();         
+                $('#videoMP4').remove();
+            },200);
+            $('#m2bg5').show();
+			//nextLO_btn
+			$('#nextLO_btn').show();
+        }
+    }
+    function videoPlay(){
+        var videoMP4 = document.querySelector('#videoMP4');
+        var myAudio = document.querySelector('#myAudio');
+        if(videoMP4){
+            videoMP4.play();
+        }
+        if(myAudio){
+            myAudio.play();
+        }
+    }
+    function videoPause(){
+        var videoMP4 = document.querySelector('#videoMP4');
+        var myAudio = document.querySelector('#myAudio');
+        if(videoMP4){
+            videoMP4.pause();
+        }
+        if(myAudio){
+            myAudio.pause();
+        }
+    }
+    var sub0Status
+    window.addEventListener("message", messageHandler, true);
+    function messageHandler(e) {
+        var dataStr = e.data;
+            var list = dataStr.split("#");
+
+            if (list[0] == "getAllSubStatus") {
+                sub0Status  =list[1].split("");
+                console.log("111111111111111111==="+sub0Status);
+            } else if (list[0] == "lovideoMP4play") {
+                console.log("lovideoMP4play");
+                videoBtn();
+            }else if (list[0] == "videoPlay") {
+                videoPlay();
+            }else if (list[0] == "videoPause") {
+                videoPause();
+            }
+    }
+    function getAllSubStatus(num) {
+        console.log('getAllSubStatus');
+        window.parent.postMessage("getAllSubStatus#" + num, "*");
+    }
+    function getObj(obj) {
+        return document.getElementById(obj);
+    }
+    var s = 0;   
+
+    function setMyCompleted(obj) {
+        window.parent.postMessage("setCompleted#" + obj, "*");
+    }
+
+    function totalLoPage(num) {
+        window.parent.postMessage("totalPage#" + num, "*");
+    }
+
+    function nowLoPage(num) {
+        window.parent.postMessage("nowPage#" + num, "*");
+    }
+    function setMyVideoState(str){
+        //window.parent.postMessage("setVideoState#"+str,"*");
+    }
+    function fingerShow(num){
+        window.parent.postMessage("fingerShow#"+num,"*");
+    }
+    function unNav(str){
+        window.parent.postMessage("unNav#"+str,"*");
+    }
+    function tabToggle(str){
+        window.parent.postMessage("tabToggle#"+str,"*");
+    }
+    function updateMyPercent(str){
+        //window.parent.postMessage("updatePercent#"+str,"*");
+    }
+    function readSomeThing(url) {
+        //myAudio.controls = true;
+		document.body.appendChild(myAudio);
+        myAudio.pause();
+        myAudio.src = url;
+        myAudio.load();
+        myAudio.play();
+    }
+</script>
+</html>
